@@ -15,13 +15,13 @@ export default function EventDetails() {
       time: "09:00 AM",
       location: "Department of Information Technology",
       about:
-        "TECHPRESENTX is a Paper Presentation event. It is a technical event where participants showcase their ideas, research insights, and innovative solutions on emerging technologies. This platform encourages students to explore real-world problems, think critically, and present their concepts with clarity and confidence. It’s an opportunity to demonstrate knowledge, creativity, and presentation skills before a panel of judges.(Team Composition: 2-3 members)",
+        "TECHPRESENTX is a Paper Presentation event. It is a technical event where participants showcase their ideas, research insights, and innovative solutions on emerging technologies. This platform encourages students to explore real-world problems, think critically, and present their concepts with clarity and confidence. It’s an opportunity to demonstrate knowledge, creativity, and presentation skills before a panel of judges.",
       prize: [
         { place: "1st Place", amount: "Details" },
         { place: "2nd Place", amount: "Details" },
         { place: "3rd Place", amount: "Details" },
       ],
-
+    team: { size:"2-3 members"},
     },
     terrain: {
       title: "THINK & INK",
@@ -29,7 +29,8 @@ export default function EventDetails() {
       time: "9:00 AM",
       location: "Department of Information Technology",
       about:
-        "Poster Designing & Presentation is a dynamic event that blends creativity, innovation, and communication skills. Participants will design an engaging and impactful poster based on the given themes and present their ideas before the judges within the allotted time.The event is divided into Technical and Non-Technical categories, encouraging students to express their thoughts on social responsibility, creativity, emerging technologies, and future innovations.Through visual storytelling and confident presentation, participants must clearly convey their concept, originality, and relevance of the theme. The event duration is 1 hour 30 minutes.This competition evaluates creativity, clarity of thought, design aesthetics, innovation, and presentation skills.(Individual Participation)",
+        "Poster Designing & Presentation is a dynamic event that blends creativity, innovation, and communication skills. Participants will design an engaging and impactful poster based on the given themes and present their ideas before the judges within the allotted time.The event is divided into Technical and Non-Technical categories, encouraging students to express their thoughts on social responsibility, creativity, emerging technologies, and future innovations.Through visual storytelling and confident presentation, participants must clearly convey their concept, originality, and relevance of the theme. The event duration is 1 hour 30 minutes.This competition evaluates creativity, clarity of thought, design aesthetics, innovation, and presentation skills.",
+        team: { size:"Individual or participation"},
       prize: [
         { place: "1st Place", amount: "details" },
         { place: "2nd Place", amount: "details" },
@@ -37,115 +38,132 @@ export default function EventDetails() {
       ],
     },
     sustaino: {
-      title: "PROTOSHOW",
-      date: "March 14, 2026",
-      time: "9:00 PM",
-      location: "Department of Information Technology",
-      price: "₹100.00",
-      about:
-        "Details",
-      prize: [
-        { place: "1st Place", amount: "₹5000 + Certificate" },
-        { place: "2nd Place", amount: "₹3000 + Certificate" },
-        { place: "3rd Place", amount: "₹1000 + Certificate" },
-      ],
-    },
+  title: "PROTOSHOW",
+  date: "March 14, 2026",
+  time: "9:00 PM",
+  location: "Department of Information Technology",
+  about:
+    "PROTOSHOW is a project expo organized by the Department of Information Technology, providing a platform for students to present innovative ideas, working models, and technical solutions. The event encourages creativity, practical learning, and problem-solving through real-world applications.",
+  topics: [
+    "AR / VR",
+    "Internet of Things (IoT)",
+    "Cyber Security",
+    "Cloud Computing",
+    "Design & Innovation (Environment-related Projects)",
+    
+  ],
+  team: { size:"max 4 members"},
+  prize: [
+    { place: "1st Place", amount: "details" },
+    { place: "2nd Place", amount: "details" },
+    { place: "3rd Place", amount: "details" },
+  ],
+},
     techtraid: {
-      title: "TECH-TRAID",
-      date: "Feb 14, 2026",
-      time: "11:00 AM",
-      location: "REC",
-      price: "₹90.00",
-      about:
-        "Technical trivia and debugging competition. Test your knowledge and problem-solving abilities in this fast-paced technical event.",
-      prize: [
-        { place: "1st Place", amount: "₹4000 + Certificate" },
-        { place: "2nd Place", amount: "₹2500 + Certificate" },
-        { place: "3rd Place", amount: "₹1500 + Certificate" },
-      ],
-    },
+  title: "TECH-TRAID",
+  date: "March 14, 2026",
+  time: "09:00 AM",
+  location: "Department of Information Technology",
+  about:
+    "TECH-TRAID is a team-based technical event designed to test participants’ knowledge, logic, creativity, and teamwork through multiple engaging rounds.\n\n" +
+    "Round Details:\n" +
+    "• Round 1 – Tech Toss (Connections): Teams identify and link related technical concepts.\n" +
+    "• Round 2 – Pass the Byte (Riddles): Solve technical and logical riddles.\n" +
+    "• Round 3 – Pixel Pictionary: One member draws a technical term while the other guesses it.\n\n" ,
+  team: {
+    size: "2 members per team"
+  },
+  prize: [
+    { place: "1st Place", amount: "Details" },
+    { place: "2nd Place", amount: "Details" },
+    { place: "3rd Place", amount: "Details" }
+  ],
+},
     codearena: {
       title: "CODE ARENA",
-      date: "Feb 14, 2026",
-      time: "03:00 PM",
-      location: "REC",
-      price: "₹100.00",
+      date: "March 14, 2026",
+      time: "09:00 PM",
+      location: "Department of Information Technology",
       about:
-        "Competitive programming event. Solve complex algorithmic problems in a time-bound competition to prove your coding excellence.",
-      prize: [
-        { place: "1st Place", amount: "₹5000 + Certificate" },
-        { place: "2nd Place", amount: "₹3000 + Certificate" },
-        { place: "3rd Place", amount: "₹1000 + Certificate" },
+        "CODE ARENA is a technical competition designed to test participants’ technical knowledge, logical thinking, and coding skills through multiple challenging rounds.\n\n" +
+    "Round Details:\n" +
+    "Round 1 – MCQ:\n" +
+    "• Emerging Technologies\n" +
+    "• Engineering Fundamentals\n" +
+    "• Technology in Daily Life\n" +
+    "• Logo to Invention\n\n" +
+    "Round 2 – Code Debugging:\n" +
+    "• Debugging programs in Python / C / Java (participant’s choice)",
+      team: { size:"2 members per team"},
+        prize: [
+        { place: "1st Place", amount: "details" },
+        { place: "2nd Place", amount: "details" },
+        { place: "3rd Place", amount: "details" },
       ],
     },
     mysterymanor: {
       title: "MYSTERY MANOR",
-      date: "Feb 15, 2026",
-      time: "04:00 PM",
-      location: "AUD",
-      price: "₹60.00",
+      date: "March 14, 2026",
+      time: "09:00 PM",
+      location: "Department of Information Technology",
       about:
         "A mystery-solving game where teams work together to solve puzzles and uncover secrets in an engaging event.",
       prize: [
-        { place: "1st Place", amount: "₹3000 + Certificate" },
-        { place: "2nd Place", amount: "₹1500 + Certificate" },
-        { place: "3rd Place", amount: "₹500 + Certificate" },
+        { place: "1st Place", amount: "details" },
+        { place: "2nd Place", amount: "details" },
+        { place: "3rd Place", amount: "details" },
       ],
     },
     theboardroom: {
       title: "THE BOARDROOM",
-      date: "Feb 16, 2026",
-      time: "05:00 PM",
-      location: "GND",
-      price: "₹70.00",
+      date: "March 14, 2026",
+      time: "09:00 PM",
+      location: "Department of Information Technology",
       about:
         "Business simulation event. Test your entrepreneurial and strategic thinking skills in a realistic business scenario.",
       prize: [
-        { place: "1st Place", amount: "₹3500 + Certificate" },
-        { place: "2nd Place", amount: "₹2000 + Certificate" },
-        { place: "3rd Place", amount: "₹1000 + Certificate" },
+        { place: "1st Place", amount: "details" },
+        { place: "2nd Place", amount: "details" },
+        { place: "3rd Place", amount: "details" },
       ],
     },
     blabberbox: {
       title: "BLABBER BOX",
-      date: "Feb 17, 2026",
-      time: "06:00 PM",
-      location: "OUT",
-      price: "₹50.00",
+      date: "March 14, 2026",
+      time: "09:00 PM",
+      location: "Department of Information Technology",
       about:
         "Public speaking and communication event. Showcase your presentation and speaking skills on the big stage.",
       prize: [
-        { place: "1st Place", amount: "₹2500 + Certificate" },
-        { place: "2nd Place", amount: "₹1500 + Certificate" },
-        { place: "3rd Place", amount: "₹500 + Certificate" },
+        { place: "1st Place", amount: "details" },
+        { place: "2nd Place", amount: "details" },
+        { place: "3rd Place", amount: "details" },
       ],
     },
     debate: {
-      title: "TUNE TREK / DEBATE",
-      date: "Feb 15, 2026",
-      time: "07:00 PM",
-      location: "AUD",
-      price: "₹40.00",
+      title: "TUNE TREK",
+      date: "March 14, 2026",
+      time: "09:00 PM",
+      location: "Department of Information Technology",
       about:
         "A mix of music and debate events. Express yourself through music performances or engage in heated competitive debates.",
       prize: [
-        { place: "1st Place", amount: "₹2000 + Certificate" },
-        { place: "2nd Place", amount: "₹1200 + Certificate" },
-        { place: "3rd Place", amount: "₹500 + Certificate" },
+        { place: "1st Place", amount: "details" },
+        { place: "2nd Place", amount: "details" },
+        { place: "3rd Place", amount: "details" },
       ],
     },
     franchisetable: {
       title: "THE FRANCHISE TABLE",
-      date: "Feb 15, 2026",
-      time: "08:00 PM",
-      location: "AUD",
-      price: "₹65.00",
+      date: "March 14, 2026",
+      time: "09:00 PM",
+      location: "Department of Information Technology",
       about:
         "Entrepreneurship case study event. Analyze and solve real-world business problems and franchising scenarios.",
       prize: [
-        { place: "1st Place", amount: "₹3000 + Certificate" },
-        { place: "2nd Place", amount: "₹1800 + Certificate" },
-        { place: "3rd Place", amount: "₹800 + Certificate" },
+        { place: "1st Place", amount: "details" },
+        { place: "2nd Place", amount: "details" },
+        { place: "3rd Place", amount: "details" },
       ],
     },
   };
@@ -202,8 +220,33 @@ export default function EventDetails() {
             <span className="section-icon">ℹ️</span>
             About the Event
           </div>
-          <div className="section-content">{details.about}</div>
+          <div className="section-content" style={{ whiteSpace: "pre-line" }}>{details.about}</div>
+          {details.topics && (
+      <>
+        <p><strong>Topics include:</strong></p>
+        <ul>
+          {details.topics.map((topic, index) => (
+            <li key={index}>{topic}</li>
+          ))}
+        </ul>
+      </>
+    )}
         </div>
+
+        <div className="section">
+  <div className="section-title">
+    <span className="section-icon">👥</span>
+    Team Details
+  </div>
+
+  <div className="section-content">
+    <ul>
+      <li>
+        <strong>Team Size:</strong> {details.team?.size}
+      </li>
+    </ul>
+  </div>
+</div>
 
         <div className="section">
           <div className="section-title">
