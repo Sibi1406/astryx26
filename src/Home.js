@@ -28,6 +28,15 @@ function getTimeLeft(targetDate) {
   };
 }
 
+function CountdownBox({ value, label }) {
+  return (
+    <div className="countdown-box">
+      <div className="count-value">{value}</div>
+      <div className="count-label">{label}</div>
+    </div>
+  );
+}
+
 export default function Home() {
   const navigate = useNavigate();
   const { days, hours, minutes, seconds } = useCountdown(EVENT_DATE);
@@ -48,88 +57,77 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <div className="home-wrapper">
+ return (
+  <div className="home-wrapper">
 
-      {/* 🌌 Background Layers */}
-      <div className="bg-elements">
-        <div className="stars"></div>
-        <div className="particles"></div>
-        <div className="shooting-star star1"></div>
-        <div className="shooting-star star2"></div>
-        <div className="shooting-star star3"></div>
-      </div>
+    {/* NAVBAR */}
+    <nav className="navbar">
+      <div className="nav-inner">
 
-      {/* NAVBAR */}
-      <nav className="navbar">
-        <div className="nav-inner">
-
-          <div className="nav-left">
-            <div className="nav-logo">ASTRYX'26</div>
-          </div>
-
-          <div className="nav-center">
-            <a href="events">Events</a>
-            <a href="#workshops">Workshops</a>
-            <a href="#contact">Contact</a>
-          </div>
-
-          <div className="nav-right">
-            <button
-              className="login-btn"
-              onClick={() => navigate("/login")}
-            >
-              Login
-            </button>
-          </div>
-
+        <div className="nav-left">
+          <div className="nav-logo">ASTRYX'26</div>
         </div>
-      </nav>
 
-      {/* HERO */}
-      <section className="hero">
-        <div className="hero-content">
+        <div className="nav-center">
+          <a href="events">Events</a>
+          <a href="#workshops">Workshops</a>
+          <a href="#contact">Contact</a>
+        </div>
 
-          <div className="inst-header">
-            <div className="inst-row">
-              <img src="/logo.png" alt="College Logo" className="inst-logo" />
+        <div className="nav-right">
+          <button
+            className="login-btn"
+            onClick={() => navigate("/login")}
+          >
+            Login
+          </button>
+        </div>
 
-              <div className="inst-text">
-                <h2 className="top-info">
-                  RAMCO INSTITUTE OF TECHNOLOGY
-                </h2>
+      </div>
+    </nav>
 
-                <p className="inst-sub">
-                  (An Autonomous Institution)
-                </p>
+    {/* HERO */}
+    <section className="hero">
+      <div className="hero-content">
 
-                <p className="inst-desc">
-                  Approved by AICTE, New Delhi & Affiliated to Anna University<br />
-                  NAAC Accredited with 'A+' Grade & ISO 9001:2015 Certified Institution<br />
-                  NBA Accredited UG Programs: CSE, EEE, ECE, MECH and CIVIL
-                </p>
-              </div>
-              <img src="/logo2.png" alt="College Logo" className="inst-logo" />
-            </div>
+        {/* ===== Elite Header System ===== */}
+        <div className="inst-row">
+          <img src="/logo.png" alt="College Logo" className="inst-logo" />
+
+          <div className="inst-text">
+            <h2 className="top-info">
+              RAMCO INSTITUTE OF TECHNOLOGY
+            </h2>
+
+            <p className="inst-sub">
+              (An Autonomous Institution)
+            </p>
+
+            <p className="inst-desc">
+              Approved by AICTE, New Delhi & Affiliated to Anna University<br />
+              NAAC Accredited with 'A+' Grade & ISO 9001:2015 Certified Institution<br />
+              NBA Accredited UG Programs: CSE, EEE, ECE, MECH and CIVIL
+            </p>
           </div>
+
+          <img src="/logo2.png" alt="IE Logo" className="inst-logo" />
+        </div>
+
+        {/* ===== Department Section ===== */}
+        <div className="hero-main">
 
           <p className="dept">
             DEPARTMENT OF INFORMATION TECHNOLOGY
           </p>
 
           <p className="assoc">
-            in association with <b>IE (I) EE Student Chapter</b>
+            in association with <b>IE (I) IT Student Chapter</b>
           </p>
 
-          <div className="event-title-block">
-            <span className="presents">presents</span>
-            <h1 className="main-title">ASTRYX'26</h1>
-          </div>
+          <h1 className="main-title">ASTRYX'26</h1>
 
           <div className="event-info">
-            <span>MARCH 14, 2026</span>
-            <span className="divider">•</span>
-            <span>LAST DATE TO REGISTER: 05/03/2026</span>
+            MARCH 14, 2026 • LAST DATE TO REGISTER: 05/03/2026
           </div>
 
           <div className="cta-buttons">
@@ -149,62 +147,40 @@ export default function Home() {
           </div>
 
         </div>
-      </section>
-      {/* ================= ABOUT SECTION ================= */}
-<section className="about-section">
-  <div className="about-container">
 
-    <h2 className="about-title">About Astryx '26</h2>
-
-    <p className="about-description">
-      Astryx ’26 is the flagship National Level Technical Symposium organised by 
-      the Department of Information Technology at Ramco Institute of Technology. 
-      Designed as a dynamic platform for innovation, creativity, and technical excellence, 
-      Astryx brings together young minds from across the nation to compete, collaborate, 
-      and showcase their skills.
-    </p>
-
-    <p className="about-description">
-      The symposium features a curated lineup of technical events, workshops, 
-      coding challenges, paper presentations, and interactive competitions 
-      aimed at fostering real-world problem-solving and emerging technology exploration.
-      Astryx is not just an event — it is an experience that inspires innovation,
-      leadership, and future-ready thinking.
-    </p>
-
-    <div className="about-highlights">
-      <div className="highlight-card">
-        <h3>10+ Events</h3>
-        <p>Technical & Non-Technical Competitions</p>
       </div>
+    </section>
 
-      <div className="highlight-card">
-        <h3>Workshops</h3>
-        <p>Hands-on Industry Sessions</p>
-      </div>
+    {/* ABOUT SECTION */}
+    <section className="about-section">
+      <div className="about-container">
 
-      
-      <div className="highlight-card">
-        <h3>Exciting Prizes</h3>
-        <p>Cash Awards & Certificates</p>
+        <h2 className="about-title">About Astryx '26</h2>
+
+        <p className="about-description">
+          Astryx ’26 is the flagship National Level Technical Symposium organised by
+          the Department of Information Technology at Ramco Institute of Technology.
+        </p>
+
+        <div className="about-highlights">
+          <div className="highlight-card">
+            <h3>10+ Events</h3>
+            <p>Technical & Non-Technical Competitions</p>
+          </div>
+
+          <div className="highlight-card">
+            <h3>Workshops</h3>
+            <p>Hands-on Industry Sessions</p>
+          </div>
+
+          <div className="highlight-card">
+            <h3>Exciting Prizes</h3>
+            <p>Cash Awards & Certificates</p>
+          </div>
+        </div>
+
       </div>
-    </div>
+    </section>
 
   </div>
-</section>
-
-
-    </div>
-  );
-}
-
-function CountdownBox({ value, label }) {
-  return (
-    <div className="countdown-box">
-      <div className="count-value">
-        {String(value).padStart(2, "0")}
-      </div>
-      <div className="count-label">{label}</div>
-    </div>
-  );
-}
+);}
