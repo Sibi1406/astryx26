@@ -481,28 +481,305 @@ body {
 /* RESPONSIVE */
 /* ========================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .nav-inner {
+    width: 95%;
+    padding: 15px 25px;
+  }
+
+  .nav-center {
+    gap: 30px;
+  }
+
+  .hero-content {
+    max-width: 700px;
+  }
 
   .main-title {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
   .inst-row {
-    flex-direction: column;
-    text-align: center;
+    gap: 50px;
+    width: 90%;
   }
 
-  .inst-text {
-    text-align: center;
+  .inst-logo {
+    width: 140px;
+  }
+
+  .countdown-container {
+    gap: 25px;
+  }
+
+  .countdown-box {
+    padding: 20px 25px;
+    min-width: 100px;
+  }
+
+  .count-value {
+    font-size: 2rem;
+  }
+
+  .about-container {
+    width: 90%;
+  }
+
+  .about-title {
+    font-size: 2.5rem;
+  }
+
+  .about-highlights {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 20px 0;
   }
 
   .nav-inner {
+    width: 95%;
+    padding: 12px 20px;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
     text-align: center;
+  }
+
+  .nav-center {
+    flex-direction: column;
+    gap: 15px;
   }
 
   .nav-right {
     justify-self: center;
+  }
+
+  .hero {
+    min-height: 70vh;
+    padding: 20px 0;
+  }
+
+  .hero-content {
+    padding: 0 15px;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  .event-info {
+    font-size: 1rem;
+    gap: 10px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .primary-btn,
+  .outline-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .explore-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .inst-row {
+    flex-direction: column;
+    gap: 30px;
+    width: 95%;
+    margin-bottom: 40px;
+  }
+
+  .inst-logo {
+    width: 120px;
+  }
+
+  .inst-text {
+    max-width: none;
+  }
+
+  .top-info {
+    font-size: 1.8rem;
+  }
+
+  .inst-sub {
+    font-size: 1rem;
+  }
+
+  .inst-desc {
+    font-size: 0.95rem;
+  }
+
+  .dept {
+    font-size: 1.2rem;
+  }
+
+  .assoc {
+    font-size: 1.1rem;
+  }
+
+  .countdown-container {
+    gap: 15px;
+    margin-top: 50px;
+  }
+
+  .countdown-box {
+    padding: 15px 20px;
+    min-width: 80px;
+  }
+
+  .count-value {
+    font-size: 1.8rem;
+  }
+
+  .count-label {
+    font-size: 0.8rem;
+  }
+
+  .about-section {
+    padding: 80px 0;
+  }
+
+  .about-container {
+    width: 95%;
+  }
+
+  .about-title {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+  }
+
+  .about-description {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 50px;
+  }
+
+  .highlight-card {
+    padding: 25px;
+  }
+
+  .highlight-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .highlight-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-logo {
+    font-size: 1rem;
+  }
+
+  .login-btn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  .hero-content {
+    padding: 0 10px;
+  }
+
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .event-info {
+    font-size: 0.9rem;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .primary-btn,
+  .outline-btn {
+    padding: 12px 30px;
+  }
+
+  .explore-btn {
+    padding: 12px 40px;
+    font-size: 0.9rem;
+  }
+
+  .inst-logo {
+    width: 100px;
+  }
+
+  .top-info {
+    font-size: 1.5rem;
+  }
+
+  .inst-sub {
+    font-size: 0.9rem;
+  }
+
+  .inst-desc {
+    font-size: 0.9rem;
+  }
+
+  .dept {
+    font-size: 1.1rem;
+  }
+
+  .assoc {
+    font-size: 1rem;
+  }
+
+  .countdown-container {
+    gap: 10px;
+  }
+
+  .countdown-box {
+    padding: 12px 15px;
+    min-width: 70px;
+  }
+
+  .count-value {
+    font-size: 1.5rem;
+  }
+
+  .count-label {
+    font-size: 0.75rem;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+  }
+
+  .about-description {
+    font-size: 0.95rem;
+  }
+
+  .highlight-card {
+    padding: 20px;
+  }
+
+  .highlight-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .highlight-card p {
+    font-size: 0.85rem;
   }
 }
