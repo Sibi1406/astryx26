@@ -61,76 +61,67 @@ export default function RegistrationForm({ isOpen, onClose }) {
     }
   };
 
-const handleSubmit = async (e) => {
+const handleSubmit = (e) => {
   e.preventDefault();
 
-  // Validation
-  if (
-    !formData.name ||
-    !formData.email ||
-    !formData.mobileNumber ||
-    !formData.college ||
-    !formData.department ||
-    !formData.year ||
-    formData.selectedEvents.length === 0 ||
-    !formData.paymentScreenshot
-  ) {
-    alert("Please fill all required fields and upload payment screenshot!");
+  if (!formData.paymentScreenshot) {
+    alert("Upload screenshot");
     return;
   }
 
-  // Email validation
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(formData.email)) {
-    alert("Please enter a valid email address!");
-    return;
-  }
+  const reader = new FileReader();
 
-  // Mobile validation
-  const mobileRegex = /^[0-9]{10}$/;
-  if (!mobileRegex.test(formData.mobileNumber)) {
-    alert("Enter valid 10-digit mobile number!");
-    return;
-  }
+  reader.onload = function () {
+    const base64File = reader.result.split(",")[1];
 
-  try {
-    await fetch(
+    const formDataToSend = new FormData();
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("mobileNumber", formData.mobileNumber);
+    formDataToSend.append("college", formData.college);
+    formDataToSend.append("department", formData.department);
+    formDataToSend.append("year", formData.year);
+    formDataToSend.append(
+      "selectedEvents",
+      formData.selectedEvents.join(", ")
+    );
+    formDataToSend.append("paymentScreenshot", base64File);
+
+    fetch(
       "https://script.google.com/macros/s/AKfycbzE7_uLIUpnu13Y_87AJNFy_S3wkRBVi3NzA9tqnCr4xLpG1xO21MTmTTHZ4nRPM9PQIA/exec",
       {
         method: "POST",
-        mode: "no-cors", // 🔥 THIS FIXES THE ERROR
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          mobileNumber: formData.mobileNumber,
-          college: formData.college,
-          department: formData.department,
-          year: formData.year,
-          selectedEvents: formData.selectedEvents,
-        }),
+        body: formDataToSend,
       }
-    );
+    )
+      .then((res) => res.text())   // 👈 IMPORTANT (NOT res.json)
+      .then((data) => {
+        const result = JSON.parse(data);
 
-    // We cannot read response in no-cors mode
-    alert("Registration Submitted Successfully!");
-    resetForm();
-    onClose();
+        if (result.status === "duplicate") {
+          alert("⚠️ Screenshot already used!");
+          return;
+        }
 
-  } catch (error) {
-    console.error("Submission error:", error);
-    alert("Submission failed. Check console.");
-  }
+        if (result.status === "success") {
+          alert("🎉 Registration successful!");
+          resetForm();
+          onClose();
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        alert("Submission failed");
+      });
+  };
+
+  reader.readAsDataURL(formData.paymentScreenshot);
 };
-
-
   const resetForm = () => {
     setFormData({
       name: "",
       email: "",
-      mobileNumber: "",
+      mobileNumber: "", 
       college: "",
       department: "",
       year: "",

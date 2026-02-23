@@ -1,0 +1,156 @@
+/* ================= PAGE BACKGROUND ================= */
+
+.workshop-page {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0a1a2f, #020814 70%);
+  color: #e6f1ff;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ================= MATRIX CANVAS ================= */
+
+#matrixCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0.18; /* subtle matrix */
+}
+
+/* ================= GRID BACKGROUND ================= */
+
+.workshop-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 102, 204, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 102, 204, 0.08) 1px, transparent 1px);
+  background-size: 45px 45px;
+  z-index: 1;
+}
+
+/* ================= WRAPPER ================= */
+
+.event-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+/* ================= BACK LINK ================= */
+
+.back-link {
+  color: #4db8ff;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 30px;
+  transition: 0.3s ease;
+}
+
+.back-link:hover {
+  text-shadow: 0 0 12px #4db8ff;
+}
+
+/* ================= HEADER ================= */
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.event-title {
+  font-size: 42px;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #f5f7f8, #4d76a2);
+
+  /* Standard property */
+  background-clip: text;
+
+  /* WebKit support (Chrome, Edge, Safari) */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Fallback */
+  color: #4db8ff;
+}
+
+.event-meta {
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+  font-size: 15px;
+  opacity: 0.75;
+}
+
+/* ================= REGISTER BUTTON ================= */
+
+.register-btn {
+  background: linear-gradient(90deg, #00f5a0, #00d9ff);
+  border: none;
+  padding: 15px 36px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: #0a0f1c;
+}
+
+.register-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(0, 123, 255, 0.7);
+}
+
+/* ================= HERO CARD ================= */
+
+.hero-card {
+  border: 1px solid rgba(77, 184, 255, 0.3);
+  border-radius: 18px;
+  padding: 40px;
+  margin-bottom: 50px;
+  background: rgba(10, 25, 45, 0.6);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 102, 204, 0.15);
+}
+
+.hero-placeholder {
+  height: 250px;
+  background: rgba(0, 123, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: #4db8ff;
+  border-radius: 12px;
+}
+
+/* ================= CARDS ================= */
+
+.card {
+  border: 1px solid rgba(77, 184, 255, 0.3);
+  border-radius: 18px;
+  padding: 30px;
+  margin-bottom: 30px;
+  background: rgba(8, 20, 40, 0.65);
+  backdrop-filter: blur(12px);
+  transition: 0.4s ease;
+  box-shadow: 0 0 20px rgba(0, 102, 204, 0.1);
+}
+
+.card h2 {
+  color: #4db8ff;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 35px rgba(0, 123, 255, 0.5);
+}

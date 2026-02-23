@@ -61,42 +61,42 @@ export default function Events() {
       eventId: "mysterymanor",
       date: "March 14, 2026",
       location: "Department of Information Technology",
-      image: Poster
+      image: "https://tse1.mm.bing.net/th/id/OIP.Vtw9fF_Nh-HklnnWNRHbXQHaEY?pid=Api&h=220&P=0"
     },
     {
       name: "The Boardroom",
       eventId: "theboardroom",
       date: "March 14, 2026",
       location: "Department of Information Technology",
-      image: Poster
+      image: "https://tse2.mm.bing.net/th/id/OIP.ND-f8l8GqhYEXy_yYG-M-AHaD4?pid=Api&h=220&P=0"
     },
     {
       name: "Blabber Box",
       eventId: "blabberbox",
       date: "March 14, 2026",
       location: "Department of Information Technology",
-      image: Poster
+      image: "https://tse1.mm.bing.net/th/id/OIP.zdVc1nljewgC5dfZRfSQfgHaDy?pid=Api&h=220&P=0"
     },
     {
       name: "Tune Trek",
       eventId: "debate",
       date: "March 14, 2026",
       location: "Department of Information Technology",
-      image: Poster
+      image: "https://tse3.mm.bing.net/th/id/OIP.D0E6ZiFm35HyZ5p63ySDrQHaDl?pid=Api&h=220&P=0"
     },
     {
       name: "The Franchise Table",
       eventId: "franchisetable",
       date: "March 14, 2026",
       location: "Department of Information Technology",
-      image: Poster
+      image: "https://tse1.mm.bing.net/th/id/OIP.qfeS42uuBov7gbhu3G0fmQHaEK?pid=Api&h=220&P=0"
     },
     {
-      name: "404 Human not Found",
+      name: "404 Humour not Found",
       eventId: "human404",
       date: "March 14, 2026",
       location: "Department of Information Technology",
-      image: Poster
+      image: "https://tse2.mm.bing.net/th/id/OIP.QgV6Vqh6NxvSXEWzE-OLKwHaHa?pid=Api&h=220&P=0"
     }
   ];
 
