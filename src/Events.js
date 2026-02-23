@@ -93,7 +93,7 @@ export default function Events() {
     },
     {
       name: "404 Humour not Found",
-      eventId: "human404",
+      eventId: "humour404",
       date: "March 14, 2026",
       location: "Department of Information Technology",
       image: "https://tse2.mm.bing.net/th/id/OIP.QgV6Vqh6NxvSXEWzE-OLKwHaHa?pid=Api&h=220&P=0"
@@ -106,6 +106,7 @@ export default function Events() {
     <div className="event-details-page">
 
       {/* Header */}
+      
       <div className="top-controls">
         <div className="symposium-title">ASTRYX'26</div>
       </div>

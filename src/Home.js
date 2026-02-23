@@ -90,7 +90,7 @@ useEffect(() => {
         const dy = particles[i].y - particles[j].y;
         const distance = Math.sqrt(dx * dx + dy * dy);
 
-        if (distance < 130) {
+        if (distance < 100) {
           ctx.strokeStyle = "rgba(0,217,255,0.15)";
           ctx.lineWidth = 1;
           ctx.beginPath();

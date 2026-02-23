@@ -166,6 +166,19 @@ export default function EventDetails() {
         { place: "3rd Place", amount: "details" },
       ],
     },
+    humour404: {
+      title: "404 HUMOUR NOT FOUND",
+      date: "March 14, 2026",
+      time: "09:00 PM",
+      location: "Department of Information Technology",
+      about:
+        "A humorous event where participants solve puzzles and uncover hidden jokes in a fun and engaging environment.",
+      prize: [
+        { place: "1st Place", amount: "details" },
+        { place: "2nd Place", amount: "details" },
+        { place: "3rd Place", amount: "details" },
+      ],
+    },
   };
 
   const details = eventDetails[eventId] || eventDetails["codeconquer"];

@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Space Mono', Courier, monospace;
     color: #e9eef3;
     background-color: #0a0a0a;
     background-image: 
@@ -12,7 +12,9 @@ body {
 * {
     max-width: 100%;
 }
-
+.event-details-page {
+  font-family: 'Space Mono', Courier, monospace;
+}
 .page-title {
     text-align: center;
     padding: 34px 0 18px;
