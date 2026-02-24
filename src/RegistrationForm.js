@@ -28,6 +28,24 @@ export default function RegistrationForm({ isOpen, onClose }) {
     "DIGITAL FORENSIC WORKSHOP",
   ];
 
+  const technicalEvents = new Set([
+    "TECHPRESENTX",
+    "THINK & INK",
+    "PROTOSHOW",
+    "TECH-TRAID",
+    "CODE ARENA",
+    "DIGITAL FORENSIC WORKSHOP",
+  ]);
+
+  const nonTechnicalEvents = new Set([
+    "MYSTERY MANOR",
+    "THE BOARDROOM",
+    "BLABBER BOX",
+    "TUNE TREK",
+    "THE FRANCHISE TABLE",
+    "404 HUMAN NOT FOUND",
+  ]);
+
   const departments = ["CSE", "IT", "CSBS", "AIDS", "AI/ML", "CYBERSECURITY", "Others"];
   const years = ["1st Year", "2nd Year", "3rd Year", "4th Year"];
 
@@ -42,11 +60,41 @@ export default function RegistrationForm({ isOpen, onClose }) {
   const handleEventToggle = (event) => {
     setFormData((prev) => {
       const isSelected = prev.selectedEvents.includes(event);
+
+      if (isSelected) {
+        return {
+          ...prev,
+          selectedEvents: prev.selectedEvents.filter((e) => e !== event),
+        };
+      }
+
+      // attempting to add
+      const currentTechCount = prev.selectedEvents.filter((e) => technicalEvents.has(e)).length;
+      const currentNonTechCount = prev.selectedEvents.filter((e) => nonTechnicalEvents.has(e)).length;
+
+      const addingIsTech = technicalEvents.has(event);
+      const addingIsNonTech = nonTechnicalEvents.has(event);
+
+      // enforce max 2 selections
+      if (prev.selectedEvents.length >= 2) {
+        alert("You can select only two events: one technical and one non-technical.");
+        return prev;
+      }
+
+      if (addingIsTech && currentTechCount >= 1) {
+        alert("You can select only one technical event.");
+        return prev;
+      }
+
+      if (addingIsNonTech && currentNonTechCount >= 1) {
+        alert("You can select only one non-technical event.");
+        return prev;
+      }
+
+      // allow add
       return {
         ...prev,
-        selectedEvents: isSelected
-          ? prev.selectedEvents.filter((e) => e !== event)
-          : [...prev.selectedEvents, event],
+        selectedEvents: [...prev.selectedEvents, event],
       };
     });
   };

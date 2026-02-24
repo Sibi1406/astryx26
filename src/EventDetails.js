@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./event.css";
 import RegistrationForm from "./RegistrationForm";
 
@@ -9,39 +9,47 @@ export default function EventDetails() {
   const [showRegistrationForm, setShowRegistrationForm] = useState(false);
 
   const eventDetails = {
-    codeconquer: {
-      title: "TECHPRESENTX",
+    paperpresentation: {
+      title: "PAPER PARADE",
       date: "March 14, 2026",
-      time: "09:00 AM",
-      location: "Department of Information Technology",
+      time: "Morning Session",
+      location: "C2L01",
       about:
         "TECHPRESENTX is a Paper Presentation event. It is a technical event where participants showcase their ideas, research insights, and innovative solutions on emerging technologies. This platform encourages students to explore real-world problems, think critically, and present their concepts with clarity and confidence. It’s an opportunity to demonstrate knowledge, creativity, and presentation skills before a panel of judges.",
       prize: [
-        { place: "1st Place", amount: "Details" },
-        { place: "2nd Place", amount: "Details" },
-        { place: "3rd Place", amount: "Details" },
+        { place: "1st Place", amount: "Shield + Certificate" },
+        { place: "2nd Place", amount: "Shield + Certificate" },
+        { place: "3rd Place", amount: "Shield + Certificate" },
       ],
-    team: { size:"2-3 members"},
+      team: { size: "2-3 members" },
+      coordinator: {
+        faculty: "Mr.S.Sakkaravarthi",
+        student: "Poorinma A, Vignesh S, Varuna, Lokesh",
+      },
     },
-    terrain: {
+    posterpresentation: {
       title: "THINK & INK",
       date: "March 14, 2026",
-      time: "9:00 AM",
-      location: "Department of Information Technology",
+      time: "10:00 AM -11:00 AM",
+      location: "Data Science Laboratory",
       about:
         "Poster Designing & Presentation is a dynamic event that blends creativity, innovation, and communication skills. Participants will design an engaging and impactful poster based on the given themes and present their ideas before the judges within the allotted time.The event is divided into Technical and Non-Technical categories, encouraging students to express their thoughts on social responsibility, creativity, emerging technologies, and future innovations.Through visual storytelling and confident presentation, participants must clearly convey their concept, originality, and relevance of the theme. The event duration is 1 hour 30 minutes.This competition evaluates creativity, clarity of thought, design aesthetics, innovation, and presentation skills.",
         team: { size:"Individual or participation"},
+        coordinator: {
+        faculty: "Mrs.G.Sivasathiya",
+        student: "Gayathri K,Naveen Kumar R S, Hari Eshwar , Harini K",
+      },
       prize: [
-        { place: "1st Place", amount: "details" },
-        { place: "2nd Place", amount: "details" },
-        { place: "3rd Place", amount: "details" },
+        { place: "1st Place", amount: "Cash Prize + Certificate" },
+        { place: "2nd Place", amount: "Cash Prize + Certificate" },
+        { place: "3rd Place", amount: "Cash Prize + Certificate" },
       ],
     },
-    sustaino: {
+    projectexpo: {
   title: "PROTOSHOW",
   date: "March 14, 2026",
-  time: "9:00 PM",
-  location: "Department of Information Technology",
+  time: "11:15 AM - 12:15 PM",
+  location: "Mechanical seminar hall",
   about:
     "PROTOSHOW is a project expo organized by the Department of Information Technology, providing a platform for students to present innovative ideas, working models, and technical solutions. The event encourages creativity, practical learning, and problem-solving through real-world applications.",
   topics: [
@@ -53,40 +61,46 @@ export default function EventDetails() {
     
   ],
   team: { size:"max 4 members"},
+  coordinator: {
+        faculty: "Mrs.M.Rethinakumari",
+        student: "Jeyadevi S,Vimal S,Saranya,Sabari",
+      },
   prize: [
-    { place: "1st Place", amount: "details" },
-    { place: "2nd Place", amount: "details" },
-    { place: "3rd Place", amount: "details" },
+    { place: "1st Place", amount: "Cash Prize + Certificate" },
+    { place: "2nd Place", amount: "Cash Prize + Certificate" },
+    { place: "3rd Place", amount: "Cash Prize + Certificate" },
   ],
 },
     techtraid: {
   title: "TECH-TRAID",
   date: "March 14, 2026",
-  time: "09:00 AM",
-  location: "Department of Information Technology",
+  time: "Afternoon Session",
+  location: "C2L02",
   about:
     "TECH-TRAID is a team-based technical event designed to test participants’ knowledge, logic, creativity, and teamwork through multiple engaging rounds.\n\n" +
-    "Round Details:\n" +
     "• Round 1 – Tech Toss (Connections): Teams identify and link related technical concepts.\n" +
     "• Round 2 – Pass the Byte (Riddles): Solve technical and logical riddles.\n" +
     "• Round 3 – Pixel Pictionary: One member draws a technical term while the other guesses it.\n\n" ,
   team: {
     size: "2 members per team"
   },
+  coordinator: {
+        faculty: "Dr.K.Palraj",
+        student: "Jeeva Sri M,Muniraj M,Abhinaya,Siva",
+      },
   prize: [
-    { place: "1st Place", amount: "Details" },
-    { place: "2nd Place", amount: "Details" },
-    { place: "3rd Place", amount: "Details" }
+    { place: "1st Place", amount: "Shield + Certificate" },
+    { place: "2nd Place", amount: "Shield + Certificate" },
+    { place: "3rd Place", amount: "Shield + Certificate" }
   ],
 },
     codearena: {
       title: "CODE ARENA",
       date: "March 14, 2026",
-      time: "09:00 PM",
-      location: "Department of Information Technology",
+      time: "Afternoon Session",
+      location: "Data Science Laboratory",
       about:
         "CODE ARENA is a technical competition designed to test participants’ technical knowledge, logical thinking, and coding skills through multiple challenging rounds.\n\n" +
-    "Round Details:\n" +
     "Round 1 – MCQ:\n" +
     "• Emerging Technologies\n" +
     "• Engineering Fundamentals\n" +
@@ -95,88 +109,128 @@ export default function EventDetails() {
     "Round 2 – Code Debugging:\n" +
     "• Debugging programs in Python / C / Java (participant’s choice)",
       team: { size:"2 members per team"},
+      coordinator: {
+        faculty: "Dr.G.Mareeswari",
+        student: "Poongathai,Varun V,Thiraviyakumar,Santhiya",
+      },
         prize: [
-        { place: "1st Place", amount: "details" },
-        { place: "2nd Place", amount: "details" },
-        { place: "3rd Place", amount: "details" },
+        { place: "1st Place", amount: "Cash Prize + Certificate" },
+        { place: "2nd Place", amount: "Cash Prize + Certificate" },
+        { place: "3rd Place", amount: "Cash Prize + Certificate" },
       ],
     },
     mysterymanor: {
       title: "MYSTERY MANOR",
       date: "March 14, 2026",
-      time: "09:00 PM",
-      location: "Department of Information Technology",
+      time: "Morning Session",
+      location: "Data Science Laboratory",
       about:
-        "A mystery-solving game where teams work together to solve puzzles and uncover secrets in an engaging event.",
-      prize: [
-        { place: "1st Place", amount: "details" },
-        { place: "2nd Place", amount: "details" },
-        { place: "3rd Place", amount: "details" },
+  "MYSTERY MANOR is a non-technical detective game inspired by Sherlock Holmes that challenges participants’ observation, logical reasoning, and problem-solving skills through an immersive mystery-solving experience.\n\n" +
+  "• Round 1 – Crime Scene Chronicles\n" +
+  "• Round 2 – The Puzzle of Proofs.\n" +
+  "• Round 3 – The Final Verdict\n",
+  coordinator: {
+        faculty: "Mrs.P.Ramya",
+        student: "Valli M,Sridhar N,Ram Selvalakshmi,Arun",
+      },
+      team: { size: "2-3 members" },
+        prize: [
+        { place: "1st Place", amount: "Shield + Certificate" },
+        { place: "2nd Place", amount: "Shield + Certificate" },
+        { place: "3rd Place", amount: "Shield + Certificate" },
       ],
     },
-    theboardroom: {
-      title: "THE BOARDROOM",
+    themaestro: {
+      title: "THE MAESTRO",
       date: "March 14, 2026",
-      time: "09:00 PM",
-      location: "Department of Information Technology",
+      time: "Afternoon Session",
+      location: "Mechanical seminar hall",
       about:
         "Business simulation event. Test your entrepreneurial and strategic thinking skills in a realistic business scenario.",
-      prize: [
-        { place: "1st Place", amount: "details" },
-        { place: "2nd Place", amount: "details" },
-        { place: "3rd Place", amount: "details" },
+      coordinator: {
+        faculty: "Mrs.M.Thulasi Devi",
+        student: "Vijayakumar R, Harini M, Suresh,Dhanya",
+      },
+        prize: [
+        { place: "1st Place", amount: "Cash Prize + Certificate" },
+        { place: "2nd Place", amount: "Cash Prize + Certificate" },
+        { place: "3rd Place", amount: "Cash Prize + Certificate" },
       ],
     },
     blabberbox: {
       title: "BLABBER BOX",
       date: "March 14, 2026",
-      time: "09:00 PM",
-      location: "Department of Information Technology",
+      time: "Afternoon Session",
+      location: "C2L02",
       about:
         "Public speaking and communication event. Showcase your presentation and speaking skills on the big stage.",
-      prize: [
-        { place: "1st Place", amount: "details" },
-        { place: "2nd Place", amount: "details" },
-        { place: "3rd Place", amount: "details" },
+      coordinator: {
+        faculty: "Mrs.M.Thulasi Devi",
+        student: "Rashith Meeran A, Selvagayathri P, Vishal Nanda, Pooja",
+      },
+        prize: [
+        { place: "1st Place", amount: "Shield + Certificate" },
+        { place: "2nd Place", amount: "Shield + Certificate" },
+        { place: "3rd Place", amount: "Shield + Certificate" },
       ],
     },
-    debate: {
-      title: "TUNE TREK",
+    lyricalhunt: {
+      title: "LYRIX ARENA",
       date: "March 14, 2026",
-      time: "09:00 PM",
-      location: "Department of Information Technology",
+      time: "Morning Session",
+      location: "C2L01",
       about:
         "A mix of music and debate events. Express yourself through music performances or engage in heated competitive debates.",
-      prize: [
-        { place: "1st Place", amount: "details" },
-        { place: "2nd Place", amount: "details" },
-        { place: "3rd Place", amount: "details" },
+      coordinator: {
+        faculty: "Mrs.B.Thevahi",
+        student: "Jeyalaakshmi A, Saravanankumar V, Shri Vedhisha, Maharaja",
+      },
+        prize: [
+        { place: "1st Place", amount: "Shield + Certificate" },
+        { place: "2nd Place", amount: "Shield + Certificate" },
+        { place: "3rd Place", amount: "Shield + Certificate" },
       ],
     },
     franchisetable: {
       title: "THE FRANCHISE TABLE",
       date: "March 14, 2026",
-      time: "09:00 PM",
-      location: "Department of Information Technology",
+      time: "Morning Session",
+      location: "Civil seminar hall",
       about:
         "Entrepreneurship case study event. Analyze and solve real-world business problems and franchising scenarios.",
-      prize: [
-        { place: "1st Place", amount: "details" },
-        { place: "2nd Place", amount: "details" },
-        { place: "3rd Place", amount: "details" },
+      coordinator: {
+        faculty: "Mrs.A.Alagulaksmi",
+        student: "Saraswathi, Vishal Kumar, Karthik M, Karthiga",
+      },
+        prize: [
+        { place: "1st Place", amount: "Shield + Certificate" },
+        { place: "2nd Place", amount: "Shield + Certificate" },
+        { place: "3rd Place", amount: "Shield + Certificate" },
       ],
     },
     humour404: {
       title: "404 HUMOUR NOT FOUND",
       date: "March 14, 2026",
-      time: "09:00 PM",
-      location: "Department of Information Technology",
+      time: "Afternoon Session",
+      location: "Data Structure Laboratory",
       about:
-        "A humorous event where participants solve puzzles and uncover hidden jokes in a fun and engaging environment.",
-      prize: [
-        { place: "1st Place", amount: "details" },
-        { place: "2nd Place", amount: "details" },
-        { place: "3rd Place", amount: "details" },
+        "The Meme Creation Event is a fun and creative competition where you can express your ideas through humor. It’s your chance to show your creativity, imagination, and smart thinking in a simple and entertaining way.Create original memes, spread smiles, and enjoy the fun atmosphere. This event is all about creativity, positivity, and having a great time together.\n\n" +
+        "• Time Limit: Participants will be given 20–30 minutes to create a meme.\n" +
+  "• Theme Announcement: Meme themes will be given on the spot during the event.\n" +
+  "• Design Tool: Memes must be created using Canva only.\n" +
+  "• Rounds: A total of two rounds will be conducted.\n" +
+  "• Content Restrictions: AI tools such as ChatGPT, Gemini, Meta AI, etc., must not be used for content creation. Online sources are allowed only for image collection and not for content or ideas.\n" +
+  "• Judging Criteria: Memes should be funny, attractive, creative, and unique.\n\n",
+      
+      team: { size: "Individual or 2 members per team" },
+        coordinator: {
+        faculty: "Mrs.M.Rethinakumari",
+        student: "Pramila Devi, Parasuram C A, Iptika, Vishal",
+      },
+        prize: [
+        { place: "1st Place", amount: "Shield + Certificate" },
+        { place: "2nd Place", amount: "Shield + Certificate" },
+        { place: "3rd Place", amount: "Shield + Certificate" },
       ],
     },
   };
@@ -187,12 +241,23 @@ export default function EventDetails() {
     setShowRegistrationForm(true);
   };
 
+  useEffect(() => {
+    // Ensure the page is at the top when opening an event detail
+    window.scrollTo({ top: 0, left: 0 });
+  }, [eventId]);
+
+  // Prepare coordinators data for display
+  const studentCoordinators = details.coordinator?.student
+    ? Array.isArray(details.coordinator.student)
+      ? details.coordinator.student
+      : details.coordinator.student.split(",").map((s) => s.trim())
+    : [];
+
+  const facultyCoordinator = details.coordinator?.faculty || "TBA";
+
   return (
     <div className="event-details-page">
       <div className="details-container">
-        <button className="back-link" onClick={() => navigate("/events")}>
-          ← Back to events
-        </button>
 
         <div className="details-header-wrapper">
           <div className="details-header">
@@ -260,6 +325,32 @@ export default function EventDetails() {
     </ul>
   </div>
 </div>
+
+        <div className="section">
+          <div className="section-title">
+            <span className="section-icon">📞</span>
+            Coordinators
+          </div>
+          <div className="section-content">
+            <ul>
+              <li>
+                <strong>Student Coordinator:</strong>
+                {studentCoordinators.length > 0 ? (
+                  <ul>
+                    {studentCoordinators.map((name, idx) => (
+                      <li key={idx}>{name}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  " TBA"
+                )}
+              </li>
+              <li>
+                <strong>Faculty Coordinator:</strong> {facultyCoordinator}
+              </li>
+            </ul>
+          </div>
+        </div>
 
         <div className="section">
           <div className="section-title">

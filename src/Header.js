@@ -11,9 +11,6 @@ export default function Header() {
     <header className="navbar">
       <div className="nav-inner">
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          {showBack && (
-            <button className="back-btn" onClick={() => navigate("/events")}>←</button>
-          )}
           <Link to="/" className="nav-logo">ASTRYX'26</Link>
         </div>
 

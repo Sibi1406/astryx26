@@ -342,6 +342,32 @@ button:hover {
     gap: 8px;
 }
 
+/* grid to hold meta and coordinators side-by-side */
+.details-meta-grid {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.details-coordinators {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #b8bdc2;
+}
+
+.details-coordinators .meta-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.details-coordinators .meta-label {
+    color: #00d9ff;
+    font-weight: bold;
+}
+
 .details-meta .meta-label {
     color: #00d9ff;
     font-weight: bold;

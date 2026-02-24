@@ -17,22 +17,22 @@ export default function Events() {
 
   const technicalEvents = [
     {
-      name: "TechPresentX",
-      eventId: "codeconquer",
+      name: "Paper Parade",
+      eventId: "paperpresentation",
       date: "March 14, 2026",
       location: "Department of Information Technology",
       image: "https://d7c2r9g9.delivery.rocketcdn.me/wp-content/uploads/poster-presentation-example-powerpoint-1024x585.png"
     },
     {
       name: "Think & Ink",
-      eventId: "terrain",
+      eventId: "posterpresentation",
       date: "March 14, 2026",
       location: "Department of Information Technology",
       image: "https://images.template.net/wp-content/uploads/2014/12/181.jpg"
     },
     {
       name: "ProtoShow",
-      eventId: "sustaino",
+      eventId: "projectexpo",
       date: "March 14, 2026",
       location: "Department of Information Technology",
       image: "https://viet.edu.in/viet-admin/assets/img/gallery/project-expo.webp"
@@ -64,8 +64,8 @@ export default function Events() {
       image: "https://tse1.mm.bing.net/th/id/OIP.Vtw9fF_Nh-HklnnWNRHbXQHaEY?pid=Api&h=220&P=0"
     },
     {
-      name: "The Boardroom",
-      eventId: "theboardroom",
+      name: "The Maestro",
+      eventId: "themaestro",
       date: "March 14, 2026",
       location: "Department of Information Technology",
       image: "https://tse2.mm.bing.net/th/id/OIP.ND-f8l8GqhYEXy_yYG-M-AHaD4?pid=Api&h=220&P=0"
@@ -78,8 +78,8 @@ export default function Events() {
       image: "https://tse1.mm.bing.net/th/id/OIP.zdVc1nljewgC5dfZRfSQfgHaDy?pid=Api&h=220&P=0"
     },
     {
-      name: "Tune Trek",
-      eventId: "debate",
+      name: "Lyrix Arena",
+      eventId: "lyricalhunt",
       date: "March 14, 2026",
       location: "Department of Information Technology",
       image: "https://tse3.mm.bing.net/th/id/OIP.D0E6ZiFm35HyZ5p63ySDrQHaDl?pid=Api&h=220&P=0"
