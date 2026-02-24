@@ -91,7 +91,7 @@ body {
   margin: auto;
 
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
 
   backdrop-filter: blur(18px);
@@ -115,7 +115,8 @@ body {
 .nav-center {
   display: flex;
   gap: 40px;
-  justify-content: center;
+  justify-content: flex-end;
+  justify-self: end;
 }
 
 .nav-center a.nav-link {

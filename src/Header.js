@@ -20,12 +20,10 @@ export default function Header() {
         <nav className="nav-center">
           <Link to="/events" className="nav-link">Events</Link>
           <Link to="/workshops" className="nav-link">Workshops</Link>
-          <a href="#contact" className="nav-link">Contact</a>
+          <Link to="/contact" className="nav-link">Contact</Link>
         </nav>
 
-        <div className="nav-right">
-          <Link to="/login" className="login-btn">Login</Link>
-        </div>
+        
       </div>
     </motion.header>
   );

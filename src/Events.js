@@ -12,7 +12,7 @@ export default function Events() {
   const technicalEvents = [
     { name: "Paper Parade", eventId: "paperpresentation", date: "March 14, 2026", location: "IT Dept", image: "https://d7c2r9g9.delivery.rocketcdn.me/wp-content/uploads/poster-presentation-example-powerpoint-1024x585.png" },
     { name: "Think & Ink", eventId: "posterpresentation", date: "March 14, 2026", location: "IT Dept", image: "https://images.template.net/wp-content/uploads/2014/12/181.jpg" },
-    { name: "ProtoShow", eventId: "projectexpo", date: "March 14, 2026", location: "IT Dept", image: "https://viet.edu.in/viet-admin/assets/img/gallery/project-expo.webp" },
+    { name: "Prompt Wars", eventId: "vibecoding", date: "March 14, 2026", location: "IT Dept", image: "https://miro.medium.com/v2/resize:fit:1200/1*YyDadWTE5eH6rz136fO1aw.png" },
     { name: "Tech-Traid", eventId: "techtraid", date: "March 14, 2026", location: "IT Dept", image: "https://assets.thehansindia.com/h-upload/2021/07/31/1092805-tech.jpg" },
     { name: "Code Arena", eventId: "codearena", date: "March 14, 2026", location: "IT Dept", image: "https://sjinnovation.com/sites/default/files/pictures/blog-post/debug-1024x646.jpg" }
   ];
@@ -49,7 +49,7 @@ export default function Events() {
       transition={{ duration: 0.5 }}
     >
       <div className="top-controls">
-        <div className="symposium-title" style={{ fontFamily: 'Orbitron' }}>ASTRYX'26</div>
+        <div className="symposium-title" style={{ fontFamily: 'Orbitron' }}></div>
       </div>
 
       <motion.h1 className="page-title" variants={fadeInUp} initial="initial" animate="animate" style={{ fontFamily: 'Orbitron' }}>
@@ -68,7 +68,6 @@ export default function Events() {
             <div className="event-image">
               <img src={event.image} alt={event.name} className="event-poster" />
             </div>
-            <p className="details-text">DETAILS</p>
             <p className="info">{event.date} • {event.location}</p>
             <button className="register" onClick={() => openEvent(event.eventId)}>Register Now</button>
           </motion.div>
@@ -91,7 +90,6 @@ export default function Events() {
             <div className="event-image">
               <img src={event.image} alt={event.name} className="event-poster" />
             </div>
-            <p className="details-text">DETAILS</p>
             <p className="info">{event.date} • {event.location}</p>
             <button className="register" onClick={() => openEvent(event.eventId)}>Register Now</button>
           </motion.div>

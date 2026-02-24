@@ -5,6 +5,7 @@ import Home from "./Home";
 import Events from "./Events";
 import EventDetails from "./EventDetails";
 import Workshops from "./Workshops";
+import Contact from "./Contact";
 import Header from "./Header";
 
 function AnimatedRoutes() {
@@ -16,6 +17,7 @@ function AnimatedRoutes() {
         <Route path="/events" element={<Events />} />
         <Route path="/events/:eventId" element={<EventDetails />} />
         <Route path="/workshops" element={<Workshops />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </AnimatePresence>
   );

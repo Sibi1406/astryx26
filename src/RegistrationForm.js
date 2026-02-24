@@ -14,24 +14,24 @@ export default function RegistrationForm({ isOpen, onClose }) {
   });
 
   const eventsList = [
-    "TECHPRESENTX",
+    "PAPER PARADE",
     "THINK & INK",
-    "PROTOSHOW",
+    "PROMPT WARS",
     "TECH-TRAID",
     "CODE ARENA",
     "MYSTERY MANOR",
-    "THE BOARDROOM",
+    "THE MAESTRO",
     "BLABBER BOX",
-    "TUNE TREK",
+    "LYRIX ARENA",
     "THE FRANCHISE TABLE",
     "404 HUMAN NOT FOUND",
     "DIGITAL FORENSIC WORKSHOP",
   ];
 
   const technicalEvents = new Set([
-    "TECHPRESENTX",
+    "PAPER PARADE",
     "THINK & INK",
-    "PROTOSHOW",
+    "PROMPT WARS",
     "TECH-TRAID",
     "CODE ARENA",
     "DIGITAL FORENSIC WORKSHOP",
@@ -39,9 +39,9 @@ export default function RegistrationForm({ isOpen, onClose }) {
 
   const nonTechnicalEvents = new Set([
     "MYSTERY MANOR",
-    "THE BOARDROOM",
+    "THE MAESTRO",
     "BLABBER BOX",
-    "TUNE TREK",
+    "LYRIX ARENA",
     "THE FRANCHISE TABLE",
     "404 HUMAN NOT FOUND",
   ]);
@@ -269,16 +269,37 @@ const handleSubmit = (e) => {
           <div className="form-group">
             <label>Select Events *</label>
             <div className="events-checkbox-container">
-              {eventsList.map((event) => (
-                <label key={event}>
-                  <input
-                    type="checkbox"
-                    checked={formData.selectedEvents.includes(event)}
-                    onChange={() => handleEventToggle(event)}
-                  />
-                  {event}
-                </label>
-              ))}
+              <div className="events-column">
+                <div className="events-column-title">Technical</div>
+                {eventsList
+                  .filter((ev) => technicalEvents.has(ev))
+                  .map((event) => (
+                    <label className="checkbox-label" key={event}>
+                      <input
+                        type="checkbox"
+                        checked={formData.selectedEvents.includes(event)}
+                        onChange={() => handleEventToggle(event)}
+                      />
+                      {event}
+                    </label>
+                  ))}
+              </div>
+
+              <div className="events-column">
+                <div className="events-column-title">Non-Technical</div>
+                {eventsList
+                  .filter((ev) => nonTechnicalEvents.has(ev))
+                  .map((event) => (
+                    <label className="checkbox-label" key={event}>
+                      <input
+                        type="checkbox"
+                        checked={formData.selectedEvents.includes(event)}
+                        onChange={() => handleEventToggle(event)}
+                      />
+                      {event}
+                    </label>
+                  ))}
+              </div>
             </div>
           </div>
 
