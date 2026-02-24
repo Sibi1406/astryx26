@@ -155,6 +155,21 @@ export default function Contact() {
             <div className="email-description">For any queries, suggestions, or assistance related to ASTRYX'26</div>
           </motion.div>
         </motion.div>
+
+        {/* Website Developers Section */}
+        <motion.div
+          className="contact-section developer-section"
+          variants={fadeInUp}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
+          <h2 className="section-heading">Website Developed By</h2>
+          <div className="developer-credits">
+            <div className="developer-item">Sibiah R - III IT</div>
+            <div className="developer-item">Sobika Joleen G J - III IT</div>
+          </div>
+        </motion.div>
       </div>
     </motion.div>
   );
