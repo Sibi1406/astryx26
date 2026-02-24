@@ -1,28 +1,28 @@
 body {
     margin: 0;
-    font-family: 'Space Mono', Courier, monospace;
+    font-family: 'Space Grotesk', sans-serif;
     color: #e9eef3;
-    background-color: #0a0a0a;
-    background-image: 
-        linear-gradient(0deg, transparent 24%, rgba(0, 168, 255, 0.08) 25%, rgba(0, 168, 255, 0.08) 26%, transparent 27%, transparent 74%, rgba(0, 168, 255, 0.08) 75%, rgba(0, 168, 255, 0.08) 76%, transparent 77%, transparent),
-        linear-gradient(90deg, transparent 24%, rgba(0, 168, 255, 0.08) 25%, rgba(0, 168, 255, 0.08) 26%, transparent 27%, transparent 74%, rgba(0, 168, 255, 0.08) 75%, rgba(0, 168, 255, 0.08) 76%, transparent 77%, transparent);
-    background-size: 50px 50px;
-    background-attachment: fixed;
+    background-color: #02040a;
 }
+
 * {
     max-width: 100%;
 }
+
 .event-details-page {
-  font-family: 'Space Mono', Courier, monospace;
+    font-family: 'Space Mono', Courier, monospace;
 }
+
 .page-title {
     text-align: center;
     padding: 34px 0 18px;
     font-size: clamp(24px, 5vw, 34px);
-    letter-spacing: 1.5px;
+    letter-spacing: 3px;
     margin: 18px 0 10px;
-    font-weight: 1000;
+    font-weight: 900;
     color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
 }
 
 .symposium-title {
@@ -82,9 +82,9 @@ body {
     position: absolute;
     width: 18px;
     height: 18px;
-    border: 2px solid rgba(255,255,255,0.06);
+    border: 2px solid rgba(255, 255, 255, 0.06);
     border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
     transform: rotate(45deg);
 }
 
@@ -102,7 +102,7 @@ body {
     width: 100%;
     height: clamp(160px, 40vw, 200px);
     border-radius: 12px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.6));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.6));
     margin-bottom: 18px;
     position: relative;
     overflow: hidden;
@@ -121,7 +121,7 @@ body {
     padding: 6px 10px;
     border-radius: 8px;
     font-size: 12px;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     color: #e9eef3;
     backdrop-filter: blur(4px);
 }
@@ -132,7 +132,7 @@ body {
 
 .badge.right {
     right: 14px;
-    background: linear-gradient(90deg,#007be6,#00a8ff);
+    background: linear-gradient(90deg, #007be6, #00a8ff);
     color: #fff;
 }
 
@@ -174,7 +174,7 @@ button {
     margin-top: 6px;
     padding: 12px 14px;
     background: transparent;
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 8px;
     color: #f4f7fb;
     cursor: pointer;
@@ -182,19 +182,19 @@ button {
 }
 
 button.register {
-background: linear-gradient(90deg, #00f5a0, #00d9ff);
-  border: none;
-  padding: 15px 36px;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
-  color: #0a0f1c;
+    background: linear-gradient(90deg, #00f5a0, #00d9ff);
+    border: none;
+    padding: 15px 36px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: #0a0f1c;
 }
 
 button.register:hover {
     transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0,217,255,0.25);
+    box-shadow: 0 8px 25px rgba(0, 217, 255, 0.25);
 }
 
 button:hover {
@@ -214,15 +214,20 @@ button:hover {
 }
 
 @media (min-width: 1100px) {
-    .card-container { grid-template-columns: repeat(3, 1fr); }
-    .event-card { width: auto; }
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .event-card {
+        width: auto;
+    }
 }
 
 /* Event Details Page */
 .event-details-page {
     min-height: 100vh;
     background-color: #0a0a0a;
-    background-image: 
+    background-image:
         linear-gradient(0deg, transparent 24%, rgba(47, 153, 172, 0.08) 25%, rgba(13, 206, 240, 0.08) 26%, transparent 27%, transparent 74%, rgba(0, 217, 255, 0.08) 75%, rgba(0, 217, 255, 0.08) 76%, transparent 77%, transparent),
         linear-gradient(90deg, transparent 24%, rgba(0, 168, 255, 0.08) 25%, rgba(0, 217, 255, 0.08) 26%, transparent 27%, transparent 74%, rgba(0, 217, 255, 0.08) 75%, rgba(0, 217, 255, 0.08) 76%, transparent 77%, transparent);
     background-size: 50px 50px;
@@ -406,18 +411,18 @@ button:hover {
 
 .details-container .register-btn {
     background: linear-gradient(90deg, #00f5a0, #00d9ff);
-  border: none;
-  padding: 15px 36px;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
-  color: #0a0f1c;
+    border: none;
+    padding: 15px 36px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: #0a0f1c;
 }
 
 .details-container .register-btn:hover {
     transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0,217,255,0.25);
+    box-shadow: 0 8px 25px rgba(0, 217, 255, 0.25);
 }
 
 .details-container .register-btn:active {
@@ -813,4 +818,3 @@ button:hover {
         margin-bottom: 6px;
     }
 }
-
