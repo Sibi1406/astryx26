@@ -1,9 +1,12 @@
 import './event.css';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import RegistrationForm from './RegistrationForm';
 
 export default function Events() {
   const navigate = useNavigate();
+  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
 
   const openEvent = (eventId) => {
     navigate(`/events/${eventId}`);
@@ -48,13 +51,16 @@ export default function Events() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="top-controls">
+      <div className="top-controls" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div className="symposium-title" style={{ fontFamily: 'Orbitron' }}></div>
       </div>
 
-      <motion.h1 className="page-title" variants={fadeInUp} initial="initial" animate="animate" style={{ fontFamily: 'Orbitron' }}>
-        TECHNICAL EVENTS
-      </motion.h1>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '30px', position: 'relative' }}>
+        <motion.h1 className="page-title" variants={fadeInUp} initial="initial" animate="animate" style={{ fontFamily: 'Orbitron', margin: 0, flex: 1, textAlign: 'center' }}>
+          TECHNICAL EVENTS
+        </motion.h1>
+        <button className="register" onClick={() => setShowRegistrationForm(true)} style={{ fontFamily: 'Orbitron', width: 'auto', padding: '10px 30px', position: 'absolute', right: 0 }}>Register Now</button>
+      </div>
 
       <motion.div className="card-container" variants={stagger} initial="initial" animate="animate">
         {technicalEvents.map((event, index) => (
@@ -69,12 +75,12 @@ export default function Events() {
               <img src={event.image} alt={event.name} className="event-poster" />
             </div>
             <p className="info">{event.date} • {event.location}</p>
-            <button className="register" onClick={() => openEvent(event.eventId)}>Register Now</button>
+            <button className="register" onClick={() => openEvent(event.eventId)}>Explore</button>
           </motion.div>
         ))}
       </motion.div>
 
-      <motion.h1 className="page-title" variants={fadeInUp} initial="initial" animate="animate" style={{ fontFamily: 'Orbitron', marginTop: '60px' }}>
+      <motion.h1 className="page-title" variants={fadeInUp} initial="initial" animate="animate" style={{ fontFamily: 'Orbitron', marginTop: '60px', marginBottom: '30px' }}>
         NON-TECHNICAL EVENTS
       </motion.h1>
 
@@ -95,6 +101,8 @@ export default function Events() {
           </motion.div>
         ))}
       </motion.div>
+
+      <RegistrationForm isOpen={showRegistrationForm} onClose={() => setShowRegistrationForm(false)} />
     </motion.div>
   );
 }

@@ -160,7 +160,7 @@ export default function Home() {
 
           <div className="hero-main">
             <motion.p className="dept" variants={fadeInUp}>DEPARTMENT OF INFORMATION TECHNOLOGY</motion.p>
-            <motion.p className="assoc" variants={fadeInUp}>in association with <b>IE (I) IT Student Chapter</b></motion.p>
+            <motion.p className="assoc" variants={fadeInUp}>in association with <b>IE (I)-IT Student Chapter</b></motion.p>
 
             <motion.h1
               className="main-title"
@@ -172,7 +172,7 @@ export default function Home() {
             </motion.h1>
 
             <motion.div className="event-info" variants={fadeInUp}>
-              MARCH 14, 2026 • LAST DATE TO REGISTER: 05/03/2026
+              MARCH 14, 2026 • LAST DATE TO REGISTER: 12/03/2026
             </motion.div>
 
             <motion.div className="cta-buttons" variants={fadeInUp}>

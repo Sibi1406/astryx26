@@ -94,7 +94,7 @@ export default function Workshops() {
             </h1>
             <p className="event-meta">
               <span><b>Date:</b> March 14, 2026</span>
-              <span><b>Time:</b> 2:00 PM - 4:00 PM</span>
+              <span><b>Time:</b> 1:15 PM - 4:00 PM</span>
               <span><b>Location:</b> SEMINAR HALL </span>
             </p>
           </div>

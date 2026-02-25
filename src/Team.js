@@ -3,21 +3,21 @@ import "./team.css";
 
 export default function Team() {
   const eventIncharges = [
-    { incharge: "Dr.K.Palraj", designation: "AP II/IT" },
+    { incharge: "Dr.K.Palraj", designation: "ASP/IT" },
     { incharge: "Dr.G.Mareeswari", designation: "AP II/IT" },
     { incharge: "Mr.S.Sakkaravarthi", designation: "AP II/IT" },
     { incharge: "Mrs.G.Sivasathiya", designation: "AP I/IT" },
     { incharge: "Mrs.M.Rethinakumari", designation: "AP I/IT" },
-    { incharge: "Mrs.A.Alagulaksmi", designation: "AP I/IT" },
+    { incharge: "Mrs.A.Alagulakshmi", designation: "AP I/IT" },
     { incharge: "Mrs.M.Thulasi Devi", designation: "AP I/IT" },
     { incharge: "Mrs.B.Thevahi", designation: "AP I/IT" },
     { incharge: "Mrs.P.Ramya", designation: "AP I/IT" }
   ];
 
   const studentCoordinators = [
-    { name: "Arjun", year: "III IT" },
+    { name: "Arjun G", year: "III IT" },
     { name: "Divya sri J S", year: "III IT" },
-    { name: "Mirythun Akshay M", year: "II IT" },
+    { name: "Miruthun Akshay M", year: "II IT" },
     { name: "Kaleeswari A K", year: "II IT" }
   ];
 
@@ -78,7 +78,7 @@ export default function Team() {
           whileInView="animate"
           viewport={{ once: true }}
         >
-          <h2 className="section-heading">Faculty Co-ordinator</h2>
+          <h2 className="section-heading">Faculty Co-ordinator(s)</h2>
           <motion.div className="faculty-grid" variants={stagger} initial="initial" animate="animate">
             <div className="contact-card" style={{ borderLeft: "4px solid #9a2be2" }}>
               <div className="role">Faculty Co-ordinator</div>

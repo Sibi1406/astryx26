@@ -62,7 +62,7 @@ export default function Contact() {
               variants={fadeInUp}
               whileHover={{ y: -5, boxShadow: "0 10px 30px rgba(0, 217, 255, 0.2)" }}
             >
-              <div className="coordinator-name">MIRYTHUN AKSHAY M</div>
+              <div className="coordinator-name">MIRUTHUN AKSHAY M</div>
               <a href="tel:+919363901681" className="phone-link">
                 +91 9363901681
               </a>
