@@ -55,11 +55,11 @@ export default function Events() {
         <div className="symposium-title" style={{ fontFamily: 'Orbitron' }}></div>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '30px', position: 'relative' }}>
-        <motion.h1 className="page-title" variants={fadeInUp} initial="initial" animate="animate" style={{ fontFamily: 'Orbitron', margin: 0, flex: 1, textAlign: 'center' }}>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '30px', justifyContent: 'space-between', paddingRight: '20px' }}>
+        <motion.h1 className="page-title" variants={fadeInUp} initial="initial" animate="animate" style={{ fontFamily: 'Orbitron', margin: 0 }}>
           TECHNICAL EVENTS
         </motion.h1>
-        <button className="register" onClick={() => setShowRegistrationForm(true)} style={{ fontFamily: 'Orbitron', width: 'auto', padding: '10px 30px', position: 'absolute', right: 0 }}>Register Now</button>
+        <button className="register" onClick={() => setShowRegistrationForm(true)} style={{ fontFamily: 'Orbitron', width: 'auto', padding: '10px 30px', whiteSpace: 'nowrap' }}>Register Now</button>
       </div>
 
       <motion.div className="card-container" variants={stagger} initial="initial" animate="animate">
