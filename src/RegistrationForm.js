@@ -227,7 +227,7 @@ if (formData.college === "Other") {
 }
 
   fetch(
-    "https://script.google.com/macros/s/AKfycbzE7_uLIUpnu13Y_87AJNFy_S3wkRBVi3NzA9tqnCr4xLpG1xO21MTmTTHZ4nRPM9PQIA/exec>>",
+    "https://script.google.com/macros/s/AKfycbx3POzWr7jVggC0zbIq-pam1ZXSkeROYygl2BCLrpHWQrWZQbfbkL90fv-HPPQlS1uE/exec",
     {
       method: "POST",
       body: formDataToSend,
@@ -424,6 +424,16 @@ if (formData.college === "Other") {
               </div>
             </div>
           </div>
+
+          {/* Payment QR Code */}
+          {formData.college === "Other" && (
+            <div className="form-group">
+              <label>Scan to Pay (₹200) *</label>
+              <div className="qr-container">
+                <img src={require("./assets/qr-code.jpeg")} alt="Payment QR Code" className="qr-image" />
+              </div>
+            </div>
+          )}
 
           {/* File Upload */}
           {formData.college === "Other" && (

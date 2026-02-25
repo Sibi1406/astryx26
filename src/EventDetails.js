@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import paperparadeImage from './assets/paperparade.jpeg';
 import memecreationImage from './assets/memecreation.jpeg';
 import thinkink from './assets/think&ink.jpeg';
+import techtraidImage from './assets/techtraid.jpeg';
 
 export default function EventDetails() {
   const { eventId } = useParams();
@@ -71,7 +72,7 @@ export default function EventDetails() {
   date: "March 14, 2026",
   time: "Afternoon Session",
   location: "C2L02",
-  image: "https://assets.thehansindia.com/h-upload/2021/07/31/1092805-tech.jpg",
+  image: techtraidImage,
   about: "Tech-Traid is a team-based technical event designed to test participants’ technical knowledge, logical thinking, and creativity through engaging and interactive rounds. The event encourages teamwork, quick thinking, and effective communication while solving technical challenges.\n\nRound 1 – Tech Toss (Connections):\nParticipants identify logical connections between technical terms, concepts, or visuals. This round evaluates analytical thinking and the ability to recognize relationships between technologies.\n\nRound 2 – Pass the Byte (Riddles):\nTeams solve technical and logical riddles that challenge problem-solving skills, reasoning ability, and technical understanding.\n\nRound 3 – Pixel Pictionary:\nOne team member is given a technical term to draw, while the other team member must identify the term within the given time. This round tests creativity, technical vocabulary, and team coordination.",
   team: { size: "2 members" },
   coordinator: {
