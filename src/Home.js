@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import RegistrationForm from "./RegistrationForm";
 
 const EVENT_DATE = new Date("2026-03-14T09:00:00");
+
 
 function useCountdown(targetDate) {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft(targetDate));
@@ -58,6 +60,7 @@ const staggerContainer = {
 export default function Home() {
   const navigate = useNavigate();
   const { days, hours, minutes, seconds } = useCountdown(EVENT_DATE);
+  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
 
   useEffect(() => {
     const canvas = document.getElementById("constellationCanvas");
@@ -179,13 +182,40 @@ export default function Home() {
               <button className="explore-btn" onClick={() => navigate("/events")}>Explore Events</button>
               <button className="explore-btn" onClick={() => navigate("/workshops")}>Explore Workshops</button>
             </motion.div>
+          <motion.div
+  className="register-btn-wrapper"
+  variants={fadeInUp}
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    width: "100%"      // container full width
+  }}
+>
+  <motion.button
+  className="register-btn"
+  whileHover={{ scale: 1.08 }}
+  whileTap={{ scale: 0.95 }}
+  onClick={() => setShowRegistrationForm(true)}
+>
+  Register Now
+</motion.button>
+</motion.div>
 
-            <motion.div className="countdown-container" variants={fadeInUp}>
-              <CountdownBox value={days} label="DAYS" />
-              <CountdownBox value={hours} label="HOURS" />
-              <CountdownBox value={minutes} label="MINUTES" />
-              <CountdownBox value={seconds} label="SECONDS" />
-            </motion.div>
+<RegistrationForm
+  isOpen={showRegistrationForm}
+  onClose={() => setShowRegistrationForm(false)}
+/>
+
+            
+
+  <motion.div className="countdown-container" variants={fadeInUp}>
+  <CountdownBox value={days} label="DAYS" />
+  <CountdownBox value={hours} label="HOURS" />
+  <CountdownBox value={minutes} label="MINUTES" />
+  <CountdownBox value={seconds} label="SECONDS" />
+</motion.div>
+
+
           </div>
         </motion.div>
       </section>

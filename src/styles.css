@@ -75,6 +75,33 @@ body {
   }
 }
 
+
+/* Register button — same size behavior as Explore buttons */
+.register-btn {
+  width: auto;              /* 🔑 IMPORTANT */
+  min-width: 220px;         /* match explore buttons visually */
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  /* 🔵 Blue-only gradient */
+  background: linear-gradient(135deg, #00d9ff, #00aaff);
+  color: #001018;
+
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.35);
+  transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.6);
+}
+
+
 /* ========================================= */
 /* NAVBAR (SOFTER GLASS) */
 /* ========================================= */
@@ -432,8 +459,24 @@ body {
   box-shadow: 0 18px 40px rgba(0, 217, 255, 0.4);
 }
 
+@media (max-width: 768px) {
+  .explore-btn,
+  .register-btn {
+    width: 100%;
+    max-width: 250px;      /* ⬅ slightly wider (was 260) */
+    padding: 13px 0;       /* ⬅ slightly taller */
+    font-size: 0.8rem;    /* ⬅ a bit bigger text */
+    border-radius: 999px;
+  }
 
+  .cta-buttons {
+    gap: 7px;             /* ⬅ keeps spacing balanced */
+  }
 
+  .register-btn-wrapper {
+    margin-top: 0.5px;      /* ⬅ equal spacing */
+  }
+}
 /* ========================================= */
 /* COUNTDOWN */
 /* ========================================= */

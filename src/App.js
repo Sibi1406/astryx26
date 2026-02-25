@@ -9,6 +9,8 @@ import Team from "./Team";
 import Contact from "./Contact";
 import Header from "./Header";
 
+
+
 function AnimatedRoutes() {
   const location = useLocation();
   return (
