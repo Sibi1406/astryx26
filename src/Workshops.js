@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./workshops.css";
 import RegistrationForm from "./RegistrationForm";
 import { motion } from "framer-motion";
-
+import uipath from './assets/uipath.jpeg';
 export default function Workshops() {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
 
@@ -109,16 +109,17 @@ export default function Workshops() {
         </div>
 
         <motion.div
-          className="hero-card"
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          <div className="hero-placeholder" style={{ fontFamily: 'Orbitron' }}>
-            UIPATH UNLOCKED- WORKSHOP
-          </div>
-        </motion.div>
-
+  className="poster-frame"
+  initial={{ scale: 0.95, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ delay: 0.2 }}
+>
+  <img
+    src={uipath}
+    alt="UIPath Workshop Poster"
+    className="poster-image"
+  />
+</motion.div>
         <motion.div className="card" whileHover={{ x: 10 }}>
           <h2 style={{ color: '#00f0ff' }}>About the Workshop</h2>
           <p>
