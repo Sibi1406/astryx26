@@ -98,8 +98,8 @@ const verifyPaymentOCR = async (file) => {
 
     // ✅ UPI fragment check (reliable)
     const upiValid =
-      t.includes("joleen") &&
-      t.includes("sobika") &&
+      t.includes("arjun") &&
+      t.includes("220306") &&
       t.includes("oksbi");
 
     if (!upiValid) {
