@@ -64,7 +64,7 @@ export default function EventDetails() {
   team: { size: "2 members" },
   coordinator: {
     faculty: "Mrs. M. Rethinakumari",
-    student: "Jeyadevi S, Vimal S, Saranya S, Shri Shabari Sudhan P"
+    student: "Jeyadevi S, Vimal S, Saranya S, Shiri Shabari Sudhan P"
   },
   prize: [
     { place: "1st Place", amount: "₹ 1000 Cash Prize + Certificate" },
@@ -117,7 +117,7 @@ export default function EventDetails() {
   team: { size: "2–3 members" },
   coordinator: {
     faculty: "Mrs.P.Ramya",
-    student: "Valli M, Sridhar N, Ram Selva Lakshmi M, Arudayar Arun D"
+    student: "Valli M, Sridhar N, Ram Selvalakshmi M, Arudayar Arun D"
   },
   prize: [
     { place: "1st Place", amount: "Shield + Certificate" },
@@ -210,7 +210,7 @@ Finalists face real-time managerial scenarios and must respond like a leader und
   team: { size: "Individual or 2 members" },
   coordinator: {
     faculty: "Mrs.M.Rethina Kumari",
-    student: "Pramila Devi D, Parasu Ram C A, Iptika D, Vishal P"
+    student: "Pramila Devi D, Parasuram C A, Iptika D, Vishal P"
   },
   prize: [
     { place: "1st Place", amount: "Shield + Certificate" },
