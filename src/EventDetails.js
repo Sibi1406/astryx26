@@ -20,13 +20,13 @@ export default function EventDetails() {
   time: "Morning Session",
   location: "Seminar Hall",
   image: paperparadeImage,
-  about: "Paper Parade is a technical paper presentation event where participants showcase their ideas, research insights, and innovative solutions on emerging technologies. This event provides a platform for students to analyze real-world problems, explore futuristic concepts, and propose meaningful solutions through structured research and clear presentation. Participants are expected to demonstrate technical knowledge, originality, and effective communication while presenting before a panel of judges.\n\nTopics for Presentation:\n1. Metaverse: A Sustainable Digital Future\n2. The Future of Artificial Intelligence\n3. Quantum Computing: The Future of Processing\n4. IoT for Sustainable Development\n5. Digital Innovation for Sustainable Development\n6. Industry 5.0: Human-Centric Smart Manufacturing\n\n",
+  about: "Paper Parade is a technical paper presentation event where participants showcase their ideas, research insights, and innovative solutions on emerging technologies. This event provides a platform for students to analyze real-world problems, explore futuristic concepts, and propose meaningful solutions through structured research and clear presentation. Participants are expected to demonstrate technical knowledge, originality, and effective communication while presenting before a panel of judges.\n\nTopics for Presentation: Open topics.",
   prize: [
     { place: "1st Place", amount: "₹ 1000 Cash Prize + Certificate" },
     { place: "2nd Place", amount: "₹ 500 Cash Prize + Certificate" }
     
   ],
-  team: { size: "2–3 members" },
+  team: { size: "2 members" },
   coordinator: {
     faculty: "Mr.S.Sakkaravarthi",
     student: "Poornima A, Vignesh S, Varuna Shree A, Lokesh R"
