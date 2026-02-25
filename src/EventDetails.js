@@ -10,6 +10,7 @@ import techtraidImage from './assets/techtraid.jpeg';
 import promptwarsImage from './assets/promptwar.jpeg';
 import codearenaImage from './assets/codearena.jpeg';
 import themastroImage from './assets/themastero.jpeg';
+import mysterymanorImage from './assets/mysterymanor.jpeg';
 
 export default function EventDetails() {
   const { eventId } = useParams();
@@ -56,19 +57,19 @@ export default function EventDetails() {
     vibecoding: {
   title: "PROMPT WARS",
   date: "March 14, 2026",
-  time: "11:15 AM - 12:15 PM",
+  time: "9:30 AM - 12:30 PM",
   location: "Data Structure Lab",
   image: promptwarsImage,
-  about: "Prompt Wars is an AI-driven competitive event where participants battle using prompts to generate powerful and creative AI outputs, ranging from visual content to functional real-world applications. The event focuses on prompt engineering, creativity, and the effective use of AI tools in a fast-paced environment.\n\nRound 1 – Prompt to Image:\nParticipants generate an AI image based on a given theme or description such as Future Classroom or AI in Daily Life. Teams use AI image generation tools to create visually appealing outputs and submit their best result within the allotted time.\n\nRound 2 – Prompt to Website Clone:\nParticipants recreate a simple website landing page using AI-powered tools. The task involves replicating the layout, color scheme, and content of a given reference page, demonstrating the ability to convert prompts into structured web designs.\n\nRound 3 – Build an AI Chatbot:\nParticipants build a basic AI chatbot interface that can interact with users. Suggested chatbot ideas include a college help bot, product support bot, FAQ bot, or a fun conversational assistant. This round highlights practical application of AI in solving real-world communication needs.",
+  about: "Prompt Wars is an AI-powered competitive event where participants battle using creative and strategic prompts to generate impactful AI outputs. The event emphasizes prompt engineering, creativity, and real-world AI applications in a fast-paced challenge format.\n\nRound I – Prompt to Logo:\nParticipants generate a professional and creative logo using AI tools based on a given theme or brand description. This round tests creativity, clarity of prompts, and visual branding skills.\n\nRound II – Prompt to Image:\nParticipants create an AI-generated image from a provided theme or concept such as Future Technology or AI in Daily Life. The focus is on crafting effective prompts to produce visually appealing and meaningful images.\n\nRound III – Build an AI Chatbot:\nParticipants design a basic AI chatbot capable of interacting with users. Suggested ideas include a college assistant bot, FAQ bot, product support bot, or a fun conversational assistant, highlighting practical AI usage.",
   team: { size: "2 members" },
   coordinator: {
-    faculty: "Mrs.M.Rethinakumari",
+    faculty: "Mrs. M. Rethinakumari",
     student: "Jeyadevi S, Vimal S, Saranya S, Shri Shabari Sudhan P"
   },
   prize: [
     { place: "1st Place", amount: "₹ 1000 Cash Prize + Certificate" },
-    { place: "2nd Place", amount: "₹ 500 Cash Prize + Certificate" },
-    ]
+    { place: "2nd Place", amount: "₹ 500 Cash Prize + Certificate" }
+  ]
 },
     techtraid: {
   title: "TECH-TRAID",
@@ -111,7 +112,7 @@ export default function EventDetails() {
   date: "March 14, 2026",
   time: "Morning Session",
   location: "C2L01 & C2L02",
-  image: "https://tse1.mm.bing.net/th/id/OIP.Vtw9fF_Nh-HklnnWNRHbXQHaEY?pid=Api&h=220&P=0",
+  image: mysterymanorImage,
   about: "Mystery Manor is a non-technical detective game inspired by the legendary character Sherlock Holmes. The event challenges participants’ observation skills, logical reasoning, and problem-solving abilities in an engaging and mystery-filled environment.\n\nRound 1 – Crime Scene Chronicles:\nParticipants investigate a simulated crime scene by carefully observing clues, identifying key details, and gathering initial evidence.\n\nRound 2 – The Puzzle of Proofs:\nTeams analyze collected evidence, solve logical puzzles, and connect facts to strengthen their investigation and narrow down possibilities.\n\nRound 3 – The Final Verdict:\nFinalist teams present their conclusions, identify the culprit, and justify their reasoning based on evidence and logical deduction.",
   team: { size: "2–3 members" },
   coordinator: {
