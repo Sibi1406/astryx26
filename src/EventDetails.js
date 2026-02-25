@@ -25,7 +25,7 @@ export default function EventDetails() {
   team: { size: "2–3 members" },
   coordinator: {
     faculty: "Mr.S.Sakkaravarthi",
-    student: "Poorinma A, Vignesh S, Varuna, Lokesh"
+    student: "Poorinma A, Vignesh S, Varuna Shree A, Lokesh R"
   }
 },
     posterpresentation: {
@@ -37,7 +37,7 @@ export default function EventDetails() {
   team: { size: "Individual participation" },
   coordinator: {
     faculty: "Mrs.G.Sivasathiya",
-    student: "Gayathri K, Naveen Kumar R S, Hari Eshwar, Harini K"
+    student: "Gayathri K, Naveen Kumar R S, Hari Eswar M, Harini K"
   },
   prize: [
     { place: "1st Place", amount: "Cash Prize + Certificate" },
@@ -54,7 +54,7 @@ export default function EventDetails() {
   team: { size: "1–2 members" },
   coordinator: {
     faculty: "Mrs.M.Rethinakumari",
-    student: "Jeyadevi S, Vimal S, Saranya, Sabari"
+    student: "Jeyadevi S, Vimal S, Saranya S, Shiri Shabari Sudhan P"
   },
   prize: [
     { place: "1st Place", amount: "Cash Prize + Certificate" },
@@ -71,7 +71,7 @@ export default function EventDetails() {
   team: { size: "2 members" },
   coordinator: {
     faculty: "Dr.K.Palraj",
-    student: "Jeeva Sri M, Muniraj M, Abhinaya, Siva"
+    student: "Jeeva Sri M, Muniraj M, Abinaya N, SivaKumar M"
   },
   prize: [
     { place: "1st Place", amount: "Shield + Certificate" },
@@ -88,7 +88,7 @@ export default function EventDetails() {
   team: { size: "2 members" },
   coordinator: {
     faculty: "Dr.G.Mareeswari",
-    student: "Poongathai, Varun V, Thiraviyakumar, Santhiya"
+    student: "Poongothai S, Varun V, Thiraviyakumar J M, Santhiya S"
   },
   prize: [
     { place: "1st Place", amount: "Cash Prize + Certificate" },
@@ -105,7 +105,7 @@ export default function EventDetails() {
   team: { size: "2–3 members" },
   coordinator: {
     faculty: "Mrs.P.Ramya",
-    student: "Valli M, Sridhar N, Ram Selvalakshmi, Arun"
+    student: "Valli M, Sridhar N, Ram Selva lakshmi K,Arudayar Arun D"
   },
   prize: [
     { place: "1st Place", amount: "Shield + Certificate" },
@@ -119,7 +119,7 @@ export default function EventDetails() {
       time: "Afternoon Session",
       location: "Mechanical Seminar Hall",
       about: "Business simulation event testing entrepreneurial thinking.",
-      coordinator: { faculty: "Mrs.M.Thulasi Devi", student: "Vijayakumar R, Harini M, Suresh, Dhanya" },
+      coordinator: { faculty: "Mrs.M.Thulasi Devi", student: "Vijayakumar R, Harini M, Suresh R, Dhanya Sankari M" },
       prize: [{ place: "1st Place", amount: "Cash Prize + Certificate" }, { place: "2nd Place", amount: "Cash Prize + Certificate" }, { place: "3rd Place", amount: "Cash Prize + Certificate" }]
     },
     blabberbox: {
@@ -128,7 +128,7 @@ export default function EventDetails() {
       time: "Afternoon Session",
       location: "C2L02",
       about: "Public speaking and communication event.",
-      coordinator: { faculty: "Mrs.M.Thulasi Devi", student: "Rashith Meeran A, Selvagayathri P, Vishal Nanda, Pooja" },
+      coordinator: { faculty: "Mrs.M.Thulasi Devi", student: "Rashith Meeran A, Selvagayathri P,D Vishal Nanda, Pooja Shree S" },
       prize: [{ place: "1st Place", amount: "Shield + Certificate" }, { place: "2nd Place", amount: "Shield + Certificate" }, { place: "3rd Place", amount: "Shield + Certificate" }]
     },
     lyricalhunt: {
@@ -140,7 +140,7 @@ export default function EventDetails() {
   team: { size: "2–3 members" },
   coordinator: {
     faculty: "Mrs.B.Thevahi",
-    student: "Jeyalaakshmi A, Saravanankumar V, Shri Vedhisha, Maharaja"
+    student: "Jeyalaakshmi A, Saravanankumar V, Shri Vethisha S, Maharaja T"
   },
   prize: [
     { place: "1st Place", amount: "Shield + Certificate" },
@@ -156,7 +156,7 @@ export default function EventDetails() {
   about: "The Franchise Table is an IPL-style franchise and player auction simulation event that recreates the excitement and strategy of a professional cricket auction. Participants experience real-time decision-making, budgeting, and team-building while managing an IPL franchise owner group. The event is conducted in two rounds on the same day, combining cricket knowledge with auction strategy and financial planning.\n\nRound 1 – Online Quiz (Qualifier):\nThe first round is an online quiz conducted on the same day as the main auction. The quiz tests participants’ knowledge of cricket, IPL history, player statistics, and auction strategies. Based on quiz performance, teams are shortlisted, and only the top 8 teams qualify for the main auction round.\n\nRound 2 – Main Auction Event:\nThe qualified top 8 teams participate in a live IPL-style auction. Each team represents an IPL franchise owner group and competes to build a complete squad within the given budget by bidding on players.\n\nTeam Formation:\n• Qualified Teams for Auction: 8\n• Members per Team: 4 participants\n• Each team represents one IPL franchise owner group\n\nFranchise Allocation:\nFranchises are allotted using a spinning wheel selection method. Each qualified team spins the wheel once, and the displayed franchise is assigned to the team. Franchise allocation is final, and no franchise auction will be conducted.\n\nBudget Allocation:\nEach team is provided with a total auction budget of 100 Crores.\n\nSquad Composition:\nEach team must select a total of 15 players with the following minimum requirements:\n• Batsmen: 5 (including 1 uncapped batsman – mandatory)\n• Bowlers: 4 (including 1 uncapped bowler – mandatory)\n• All-rounders: 4 (including 1 uncapped all-rounder – mandatory)\n• Wicket Keepers: 2 (mandatory)\n\nNationality Rules:\n• Minimum Indian players: 10\n• Maximum overseas players: 5\n\nTier-Based Player System:\n• Tier 1 – Base Price: 2 Crores\n• Tier 2 – Base Price: 1 Crore\n• Tier 3 – Base Price: 50 Lakhs (Uncapped)\n\nAuction Procedure:\nThe auctioneer announces player details along with the base price. Bidding starts from the base price, and teams increase bids according to tier-based increments. The highest bidder wins the player, and the winning bid amount is deducted from the team’s 100 Crore budget. If no team places a bid, the player is declared unsold.\n\nFinal Validation & Results:\nTeams are validated based on squad completion, budget management, and rule compliance. Each team must have exactly 15 players, include the required uncapped players, select a playing 11, and stay within the 100 Crore budget. Only the Winner and Runner-Up will be declared based on final validation scores.",
   coordinator: {
     faculty: "Mrs.A.Alagulaksmi",
-    student: "Saraswathi, Vishal Kumar, Karthik M, Karthiga"
+    student: "Saraswathi M, Vishal Kumar S, Karthik M, Karthiga R"
   },
   prize: [
     { place: "1st Place", amount: "Shield + Certificate" },
@@ -173,7 +173,7 @@ export default function EventDetails() {
   team: { size: "Individual or 2 members" },
   coordinator: {
     faculty: "Mrs.M.Rethinakumari",
-    student: "Pramila Devi, Parasuram C A, Iptika, Vishal"
+    student: "Pramila Devi D, Parasuram C A, Iptika D, Vishal P"
   },
   prize: [
     { place: "1st Place", amount: "Shield + Certificate" },

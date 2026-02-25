@@ -64,8 +64,6 @@
   border: 1px solid rgba(138, 43, 226, 0.2);
   border-radius: 10px;
   padding: 30px 25px;
-  max-width: 500px;
-  margin: 0;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
@@ -75,6 +73,13 @@
   border-color: rgba(138, 43, 226, 0.4);
   box-shadow: 0 0 30px rgba(138, 43, 226, 0.2);
   transform: translateY(-5px);
+}
+
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  width: 100%;
 }
 
 .role {
@@ -163,6 +168,15 @@
   z-index: 1;
 }
 
+.incharge-designation {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #00d9ff;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
 /* Student Section */
 .student-section {
   width: 100%;
@@ -224,6 +238,84 @@
   text-transform: uppercase;
   position: relative;
   z-index: 1;
+}
+
+/* Coordinators Section */
+.coordinators-section {
+  width: 100%;
+  margin-top: 70px;
+}
+
+.coordinators-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  width: 100%;
+}
+
+.coordinator-card {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(138, 43, 226, 0.08) 100%);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: 10px;
+  padding: 30px 25px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.coordinator-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.15), transparent);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.coordinator-card:hover::before {
+  left: 100%;
+}
+
+.coordinator-card:hover {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.15) 0%, rgba(138, 43, 226, 0.12) 100%);
+  border-color: rgba(0, 217, 255, 0.4);
+  box-shadow: 0 0 40px rgba(0, 217, 255, 0.25);
+  transform: translateY(-5px);
+}
+
+.coordinator-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-family: 'Space Mono', monospace;
+  position: relative;
+  z-index: 1;
+}
+
+.phone-link {
+  font-size: 20px;
+  font-weight: 700;
+  color: #00d9ff;
+  text-decoration: none;
+  font-family: 'Space Mono', monospace;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  padding-bottom: 8px;
+  border-bottom: 2px solid transparent;
+}
+
+.phone-link:hover {
+  color: #ffffff;
+  border-bottom-color: #00d9ff;
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
 }
 
 /* Email Section */
@@ -361,6 +453,11 @@
     gap: 15px;
   }
 
+  .coordinators-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+
   .convenor-section .contact-card,
   .faculty-section .contact-card {
     padding: 25px 20px;
@@ -404,7 +501,8 @@
   }
 
   .incharge-grid,
-  .student-grid {
+  .student-grid,
+  .coordinators-grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }
@@ -445,5 +543,322 @@
 
   .email-description {
     font-size: 13px;
+  }
+}
+
+/* ENHANCED RESPONSIVE - TABLETS 1024px and below */
+@media (max-width: 1024px) {
+  .contact-container {
+    padding: 35px 40px;
+  }
+
+  .incharge-grid,
+  .student-grid,
+  .coordinators-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+  }
+
+  .contact-title {
+    font-size: clamp(28px, 4vw, 36px);
+    margin: 30px 0 50px;
+  }
+
+  .section-heading {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/* ENHANCED RESPONSIVE - MEDIUM TABLETS 768px and below */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 30px 30px;
+  }
+
+  .contact-title {
+    font-size: clamp(24px, 3.5vw, 30px);
+    margin: 25px 0 40px;
+    text-shadow: 0 0 25px rgba(0, 217, 255, 0.25);
+  }
+
+  .section-heading {
+    font-size: 18px;
+    margin-bottom: 18px;
+    letter-spacing: 1.5px;
+  }
+
+  .contact-section {
+    margin-bottom: 40px;
+  }
+
+  .incharge-grid,
+  .student-grid,
+  .coordinators-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .incharge-card,
+  .student-card,
+  .coordinator-card {
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .incharge-name,
+  .student-name,
+  .coordinator-name {
+    font-size: 16px;
+  }
+
+  .incharge-designation {
+    font-size: 11px;
+  }
+
+  .student-year {
+    font-size: 12px;
+  }
+
+  .email-card {
+    padding: 30px 25px;
+    border-radius: 8px;
+  }
+
+  .email-link {
+    font-size: 20px;
+  }
+}
+
+/* ENHANCED RESPONSIVE - SMALL MOBILE 600px and below */
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 25px 20px;
+  }
+
+  .contact-title {
+    font-size: clamp(20px, 3vw, 26px);
+    margin: 20px 0 30px;
+    letter-spacing: 2px;
+  }
+
+  .section-heading {
+    font-size: 16px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+  }
+
+  .contact-section {
+    margin-bottom: 30px;
+  }
+
+  .incharge-grid,
+  .student-grid,
+  .coordinators-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .incharge-card,
+  .student-card,
+  .coordinator-card {
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  .incharge-name,
+  .student-name {
+    font-size: 15px;
+  }
+
+  .student-year {
+    font-size: 11px;
+  }
+
+  .incharge-designation {
+    font-size: 10px;
+    margin-top: 6px;
+  }
+
+  .convenor-section .contact-card,
+  .faculty-section .contact-card {
+    padding: 18px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  .designation {
+    font-size: 13px;
+  }
+
+  .role {
+    font-size: 12px;
+  }
+
+  .email-section {
+    margin-top: 50px;
+  }
+
+  .email-card {
+    padding: 28px 22px;
+  }
+
+  .email-label {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .email-link {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .email-description {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .coordinator-name,
+  .phone-link {
+    font-size: 14px;
+  }
+}
+
+/* ENHANCED RESPONSIVE - EXTRA SMALL MOBILE 480px and below */
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 20px 12px;
+  }
+
+  .contact-title {
+    font-size: clamp(18px, 2.5vw, 22px);
+    margin: 15px 0 25px;
+    letter-spacing: 1.5px;
+  }
+
+  .section-heading {
+    font-size: 14px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .contact-section {
+    margin-bottom: 25px;
+  }
+
+  .incharge-grid,
+  .student-grid,
+  .coordinators-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .incharge-card,
+  .student-card,
+  .coordinator-card {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 217, 255, 0.15);
+  }
+
+  .incharge-card::before,
+  .student-card::after,
+  .coordinator-card::before,
+  .email-card::before {
+    display: none;
+  }
+
+  .incharge-name {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .student-name {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .student-year {
+    font-size: 10px;
+  }
+
+  .incharge-designation {
+    font-size: 9px;
+    margin-top: 5px;
+  }
+
+  .event-name {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .convenor-section .contact-card,
+  .faculty-section .contact-card {
+    padding: 14px 12px;
+  }
+
+  .name {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .designation {
+    font-size: 11px;
+  }
+
+  .role {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .email-section {
+    margin-top: 40px;
+  }
+
+  .email-card {
+    padding: 20px 16px;
+    border-radius: 8px;
+  }
+
+  .email-label {
+    font-size: 10px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+
+  .email-link {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .email-description {
+    font-size: 11px;
+    margin-top: 8px;
+  }
+
+  .coordinator-name {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .phone-link {
+    font-size: 13px;
+    padding-bottom: 6px;
+  }
+
+  .developer-section {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .developer-credits {
+    padding: 15px 12px;
+  }
+
+  .developer-item {
+    font-size: 12px;
   }
 }

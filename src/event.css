@@ -841,3 +841,260 @@ button:hover {
         margin-bottom: 6px;
     }
 }
+
+/* ENHANCED RESPONSIVE - TABLETS 1024px and below */
+@media (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 30px 40px 60px;
+  }
+
+  .event-card {
+    padding: 16px;
+  }
+
+  .event-name {
+    font-size: 1.1rem;
+    margin: 10px 0 8px;
+  }
+
+  .page-title {
+    font-size: clamp(22px, 4vw, 32px);
+  }
+}
+
+/* ENHANCED RESPONSIVE - MEDIUM TABLETS 768px and below */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 25px 25px 50px;
+  }
+
+  .event-card {
+    padding: 14px;
+  }
+
+  .event-name {
+    font-size: 1rem;
+    margin: 8px 0 6px;
+  }
+
+  .event-category {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+
+  .page-title {
+    font-size: clamp(20px, 3.5vw, 28px);
+    padding: 25px 0 15px;
+    margin: 15px 0 8px;
+  }
+
+  .event-price {
+    font-size: 1.3rem;
+  }
+
+  .register-btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ENHANCED RESPONSIVE - SMALL MOBILE 600px and below */
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 15px 40px;
+  }
+
+  .event-card {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .event-name {
+    font-size: 0.95rem;
+    margin: 6px 0 5px;
+  }
+
+  .event-category {
+    font-size: 0.75rem;
+    padding: 3px 6px;
+  }
+
+  .event-price {
+    font-size: 1.2rem;
+  }
+
+  .page-title {
+    font-size: clamp(18px, 3vw, 24px);
+    padding: 20px 0 12px;
+    letter-spacing: 2px;
+    margin: 12px 0 6px;
+  }
+
+  .symposium-title {
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    margin-top: 12px;
+  }
+
+  .register-btn {
+    padding: 9px 18px;
+    font-size: 0.8rem;
+  }
+
+  .top-controls {
+    margin-bottom: 4px;
+  }
+
+  .details-header-wrapper {
+    gap: 10px;
+  }
+
+  .details-container {
+    padding: 20px 15px;
+  }
+}
+
+/* ENHANCED RESPONSIVE - EXTRA SMALL MOBILE 480px and below */
+@media (max-width: 480px) {
+  .card-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px 10px 30px;
+  }
+
+  .event-card {
+    padding: 10px;
+    border-radius: 12px;
+    border: 1.5px solid rgba(0, 168, 255, 0.3);
+  }
+
+  .event-card::before,
+  .event-card::after {
+    display: none;
+  }
+
+  .event-name {
+    font-size: 0.9rem;
+    margin: 5px 0 4px;
+  }
+
+  .event-category {
+    font-size: 0.7rem;
+    padding: 2px 5px;
+  }
+
+  .event-price {
+    font-size: 1.1rem;
+    margin: 8px 0 6px;
+  }
+
+  .page-title {
+    font-size: clamp(16px, 2.5vw, 22px);
+    padding: 18px 0 10px;
+    letter-spacing: 1px;
+    margin: 10px 0 5px;
+  }
+
+  .symposium-title {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+  }
+
+  .register-btn {
+    padding: 8px 16px;
+    font-size: 0.75rem;
+    width: 100%;
+  }
+
+  .event-details-page .details-container {
+    padding: 15px 10px;
+  }
+
+  .details-header-wrapper {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .details-title {
+    font-size: clamp(16px, 3vw, 20px);
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .register-btn-top {
+    width: 100%;
+    padding: 8px 16px;
+    font-size: 0.75rem;
+    order: -1;
+  }
+
+  .poster-placeholder {
+    height: clamp(150px, 45vw, 250px);
+    padding: 10px;
+  }
+
+  .details-meta {
+    flex-direction: column;
+    gap: 5px;
+    font-size: 0.8rem;
+  }
+
+  .details-meta .meta-item {
+    gap: 5px;
+  }
+
+  .register-section {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .price-info {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .price {
+    font-size: 1.2rem;
+  }
+
+  .section {
+    padding: 10px;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .section-icon {
+    font-size: 1rem;
+  }
+
+  .section-content {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .section-content p {
+    margin-bottom: 8px;
+  }
+
+  .section-content ul {
+    margin-left: 12px;
+    margin-top: 6px;
+  }
+
+  .section-content li {
+    margin-bottom: 5px;
+  }
+}

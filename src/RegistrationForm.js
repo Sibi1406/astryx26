@@ -25,7 +25,7 @@ export default function RegistrationForm({ isOpen, onClose }) {
     "LYRIX ARENA",
     "THE FRANCHISE TABLE",
     "404 HUMAN NOT FOUND",
-    "DIGITAL FORENSIC WORKSHOP",
+    "UIPATH UNLOCKED- WORKSHOP",
   ];
 
   const technicalEvents = new Set([
@@ -34,7 +34,7 @@ export default function RegistrationForm({ isOpen, onClose }) {
     "PROMPT WARS",
     "TECH-TRAID",
     "CODE ARENA",
-    "DIGITAL FORENSIC WORKSHOP",
+    "UIPATH UNLOCKED- WORKSHOP",
   ]);
 
   const nonTechnicalEvents = new Set([

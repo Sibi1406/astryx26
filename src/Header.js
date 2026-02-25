@@ -20,6 +20,7 @@ export default function Header() {
         <nav className="nav-center">
           <Link to="/events" className="nav-link">Events</Link>
           <Link to="/workshops" className="nav-link">Workshops</Link>
+          <Link to="/team" className="nav-link">Team</Link>
           <Link to="/contact" className="nav-link">Contact</Link>
         </nav>
 

@@ -259,22 +259,332 @@
   background: rgba(0, 217, 255, 0.5);
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
+/* ================= ENHANCED RESPONSIVE DESIGN ================= */
+
+/* TABLETS - 1024px and below */
+@media (max-width: 1024px) {
+  .registration-modal-overlay {
+    padding: 50px 15px 15px 15px;
+  }
+
   .registration-modal {
-    padding: 25px;
-    max-width: 95vw;
+    max-width: 95%;
+    padding: 35px;
+  }
+
+  .modal-title {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 13px;
+    padding: 9px 12px;
   }
 
   .events-checkbox-container {
-    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 14px;
   }
 
-  .form-actions {
-    flex-direction: column;
+  .submit-btn,
+  .cancel-btn {
+    padding: 11px 18px;
+    font-size: 13px;
+  }
+}
+
+/* MEDIUM TABLETS - 768px and below */
+@media (max-width: 768px) {
+  .registration-modal-overlay {
+    padding: 40px 10px 10px 10px;
+  }
+
+  .registration-modal {
+    max-width: 100%;
+    width: 96%;
+    padding: 28px;
+    border-radius: 10px;
+    max-height: 95vh;
+  }
+
+  .modal-close-btn {
+    top: 15px;
+    right: 15px;
+    font-size: 22px;
   }
 
   .modal-title {
     font-size: 22px;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+  }
+
+  .registration-form {
+    gap: 16px;
+  }
+
+  .form-group label {
+    font-size: 11px;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 12px;
+    padding: 8px 11px;
+    border-radius: 5px;
+  }
+
+  .events-checkbox-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .events-column-title {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .checkbox-label {
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .file-upload-label {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .upload-icon {
+    font-size: 22px;
+  }
+
+  .file-upload-label span:last-child {
+    font-size: 12px;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+
+  .form-actions {
+    gap: 10px;
+  }
+}
+
+/* SMALL MOBILE - 600px and below */
+@media (max-width: 600px) {
+  .registration-modal-overlay {
+    padding: 30px 8px 8px 8px;
+    align-items: flex-start;
+  }
+
+  .registration-modal {
+    width: 98%;
+    padding: 22px 16px;
+    border-radius: 8px;
+    max-height: 92vh;
+  }
+
+  .modal-close-btn {
+    top: 12px;
+    right: 12px;
+    font-size: 20px;
+  }
+
+  .modal-title {
+    font-size: 19px;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+  }
+
+  .registration-form {
+    gap: 14px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group label {
+    font-size: 10px;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 11px;
+    padding: 7px 10px;
+    border-radius: 4px;
+  }
+
+  .events-checkbox-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .events-column {
+    gap: 7px;
+  }
+
+  .events-column-title {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .checkbox-label {
+    font-size: 11px;
+    gap: 5px;
+  }
+
+  .checkbox-label input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+  }
+
+  .file-upload-label {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .upload-icon {
+    font-size: 20px;
+  }
+
+  .file-upload-label span:last-child {
+    font-size: 11px;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    padding: 9px 14px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+
+  .form-actions {
+    gap: 8px;
+    flex-direction: row;
+  }
+}
+
+/* EXTRA SMALL MOBILE - 480px and below */
+@media (max-width: 480px) {
+  .registration-modal-overlay {
+    padding: 20px 0 0 0;
+    align-items: flex-start;
+  }
+
+  .registration-modal {
+    width: 100%;
+    padding: 18px 12px;
+    border-radius: 6px;
+    max-height: 100vh;
+    border: 2px solid rgba(0, 217, 255, 0.25);
+  }
+
+  .modal-close-btn {
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+  }
+
+  .modal-title {
+    font-size: 16px;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .registration-form {
+    gap: 11px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group label {
+    font-size: 9px;
+    margin-bottom: 4px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 10px;
+    padding: 6px 8px;
+    border-radius: 3px;
+  }
+
+  .events-checkbox-container {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .events-column {
+    gap: 6px;
+  }
+
+  .events-column-title {
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+
+  .checkbox-label {
+    font-size: 10px;
+    gap: 4px;
+  }
+
+  .checkbox-label input[type="checkbox"] {
+    width: 13px;
+    height: 13px;
+  }
+
+  .file-upload-container {
+    position: relative;
+  }
+
+  .file-upload-label {
+    padding: 10px;
+    gap: 6px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .upload-icon {
+    font-size: 18px;
+  }
+
+  .file-upload-label span:last-child {
+    font-size: 10px;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    padding: 8px 12px;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    border-radius: 4px;
+  }
+
+  .form-actions {
+    gap: 6px;
+    flex-direction: row;
   }
 }
