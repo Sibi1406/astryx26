@@ -1681,3 +1681,14 @@ body {
   box-shadow: 0 0 18px rgba(0, 217, 255, 0.35);
   transform: translateY(-2px);
 }
+
+
+
+/* FORCE BIGGER ASTRYX ON PHONES */
+@media (max-width: 480px) {
+  .main-title {
+    font-size: clamp(2.6rem, 11vw, 3.4rem);
+    letter-spacing: 1px;
+    line-height: 1.1;
+  }
+}
