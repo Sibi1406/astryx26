@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./event.css";
+import Footer from "./Footer";
 import RegistrationForm from "./RegistrationForm";
 import { motion } from "framer-motion";
 import paperparadeImage from './assets/paperparade.jpeg';
@@ -327,6 +328,7 @@ Finalists face real-time managerial scenarios and must respond like a leader und
       </div>
 
       <RegistrationForm isOpen={showRegistrationForm} onClose={() => setShowRegistrationForm(false)} eventId={eventId} />
+      <Footer />
     </motion.div>
   );
 }

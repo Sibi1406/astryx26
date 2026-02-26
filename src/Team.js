@@ -54,6 +54,46 @@ export default function Team() {
           AstryX'26 Team
         </motion.h1>
 
+
+
+{/* Patron Row */}
+<div className="patron-row">
+
+  {/* Chief Patron */}
+  <motion.div
+    className="contact-section patron-section"
+    variants={fadeInUp}
+    initial="initial"
+    whileInView="animate"
+    viewport={{ once: true }}
+  >
+    <h2 className="section-heading">Chief Patron</h2>
+    <div className="contact-card" style={{ borderLeft: "4px solid #00d9ff" }}>
+      <div className="role">Chief Patron</div>
+      <div className="name">Dr. L. Ganesan</div>
+      <div className="designation">Director</div>
+    </div>
+  </motion.div>
+
+  {/* Patron */}
+  <motion.div
+    className="contact-section patron-section"
+    variants={fadeInUp}
+    initial="initial"
+    whileInView="animate"
+    viewport={{ once: true }}
+  >
+    <h2 className="section-heading">Patron</h2>
+    <div className="contact-card" style={{ borderLeft: "4px solid #00d9ff" }}>
+      <div className="role">Patron</div>
+      <div className="name">Dr. S. Rajakarunakaran</div>
+      <div className="designation">Principal</div>
+    </div>
+  </motion.div>
+
+</div>
+
+
         {/* Convenor Section */}
         <motion.div
           className="contact-section convenor-section"

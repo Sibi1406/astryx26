@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import "./team.css";
+import Footer from "./Footer";
 
 export default function Contact() {
   const fadeInUp = {
@@ -92,6 +93,7 @@ export default function Contact() {
           </motion.div>
         </motion.div>
       </div>
+      <Footer />
     </motion.div>
   );
 }

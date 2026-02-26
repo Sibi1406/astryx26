@@ -2,6 +2,7 @@ import './event.css';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import Footer from "./Footer";
 import RegistrationForm from './RegistrationForm';
 
 export default function Events() {
@@ -21,8 +22,8 @@ export default function Events() {
   ];
 
   const nonTechnicalEvents = [
-    { name: "Mystery Manor", eventId: "mysterymanor", date: "March 14, 2026", location: "IT Dept", image: "https://tse1.mm.bing.net/th/id/OIP.Vtw9fF_Nh-HklnnWNRHbXQHaEY?pid=Api&h=220&P=0" },
-    { name: "The Maestro", eventId: "themaestro", date: "March 14, 2026", location: "IT Dept", image: "https://tse2.mm.bing.net/th/id/OIP.ND-f8l8GqhYEXy_yYG-M-AHaD4?pid=Api&h=220&P=0" },
+    { name: "Mystery Manor", eventId: "mysterymanor", date: "March 14, 2026", location: "IT Dept", image: "http://clipart-library.com/image_gallery/n1487838.jpg" },
+    { name: "The Maestro", eventId: "themaestro", date: "March 14, 2026", location: "IT Dept", image: "https://i.etsystatic.com/35739798/r/il/a6cf14/4937087413/il_1080xN.4937087413_4jv1.jpg" },
     { name: "Blabber Box", eventId: "blabberbox", date: "March 14, 2026", location: "IT Dept", image: "https://tse1.mm.bing.net/th/id/OIP.zdVc1nljewgC5dfZRfSQfgHaDy?pid=Api&h=220&P=0" },
     { name: "Lyrix Arena", eventId: "lyricalhunt", date: "March 14, 2026", location: "IT Dept", image: "https://tse3.mm.bing.net/th/id/OIP.D0E6ZiFm35HyZ5p63ySDrQHaDl?pid=Api&h=220&P=0" },
     { name: "The Franchise Table", eventId: "franchisetable", date: "March 14, 2026", location: "IT Dept", image: "https://tse1.mm.bing.net/th/id/OIP.qfeS42uuBov7gbhu3G0fmQHaEK?pid=Api&h=220&P=0" },
@@ -97,12 +98,13 @@ export default function Events() {
               <img src={event.image} alt={event.name} className="event-poster" />
             </div>
             <p className="info">{event.date} • {event.location}</p>
-            <button className="register" onClick={() => openEvent(event.eventId)}>Register Now</button>
+            <button className="register" onClick={() => openEvent(event.eventId)}>Explore</button>
           </motion.div>
         ))}
       </motion.div>
 
       <RegistrationForm isOpen={showRegistrationForm} onClose={() => setShowRegistrationForm(false)} />
+        <Footer />
     </motion.div>
   );
 }

@@ -1485,3 +1485,199 @@ body {
     font-size: 0.65rem;
   }
 }
+
+.footer {
+  width: 100%;
+  padding: 25px 15px;
+  text-align: center;
+  background: rgba(5, 10, 25, 0.85);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0, 217, 255, 0.2);
+  color: #cfd8dc;
+  font-size: 0.9rem;
+}
+
+.footer p {
+  margin: 4px 0;
+}
+
+.footer-credit {
+  opacity: 0.85;
+}
+
+.footer-credit b {
+  color: var(--primary);
+}
+
+
+.footer-linkedin {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #a9aeb4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.linkedin-btn {
+  color: #00d9ff;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.linkedin-btn:hover {
+  color: #ffffff;
+  border-bottom-color: #00d9ff;
+  text-shadow: 0 0 8px rgba(0, 217, 255, 0.6);
+}
+
+.footer-linkedin-badges {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.linkedin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #0a66c2;
+  background: #ffffff;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid #0a66c2;
+  transition: all 0.25s ease;
+}
+
+.linkedin-badge:hover {
+  background: #0a66c2;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(10, 102, 194, 0.6);
+}
+
+
+.footer-linkedin-row {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 0.8rem;
+}
+
+.linkedin-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #cfd8dc;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.linkedin-logo {
+  background: #0a66c2;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  line-height: 1;
+}
+
+.linkedin-name {
+  color: #00d9ff;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.linkedin-item:hover .linkedin-name {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(0, 217, 255, 0.6);
+}
+
+.linkedin-separator {
+  color: #6b7280;
+  font-weight: 600;
+}
+
+
+/*/* Social pills row */
+.footer-social-row {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Social row stays same */
+.footer-social-row {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Transparent neon pill */
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: transparent;               /* ❌ no white bg */
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #e9eef3;
+  border: 1px solid rgba(0, 217, 255, 0.35);
+  backdrop-filter: blur(6px);
+  transition: all 0.25s ease;
+}
+
+/* Icon bubble (still colored) */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* Platform colors */
+.social-pill.fb .social-icon {
+  background: #1877f2;
+}
+
+.social-pill.ig .social-icon {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+}
+
+.social-pill.in .social-icon {
+  background: #0a66c2;
+}
+
+.social-pill.yt .social-icon {
+  background: #ff0000;
+}
+
+/* Hover – subtle neon glow */
+.social-pill:hover {
+  border-color: rgba(0, 217, 255, 0.7);
+  box-shadow: 0 0 18px rgba(0, 217, 255, 0.35);
+  transform: translateY(-2px);
+}

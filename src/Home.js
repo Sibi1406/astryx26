@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import RegistrationForm from "./RegistrationForm";
+import Footer from "./Footer";
 
 const EVENT_DATE = new Date("2026-03-14T09:00:00");
 
@@ -313,8 +314,11 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+          
         </div>
+        
       </section>
+      <Footer />
     </motion.div>
   );
 }

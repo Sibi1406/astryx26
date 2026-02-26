@@ -29,6 +29,36 @@
   margin-bottom: 50px;
 }
 
+/* Patron Horizontal Layout */
+.patron-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  align-items: stretch;
+  margin-bottom: 60px;
+}
+
+/* Patron cards reuse existing contact-card style */
+.patron-card {
+  max-width: 100%;
+}
+
+/* Accent borders */
+.accent-cyan {
+  border-left: 4px solid #00d9ff;
+}
+
+.accent-green {
+  border-left: 4px solid #4caf50;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .patron-row {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
 .section-heading {
   font-size: clamp(18px, 3vw, 24px);
   margin-bottom: 25px;
@@ -37,6 +67,76 @@
   color: #00d9ff;
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
+}
+
+/* Patron & Chief Patron Sections */
+.patron-section {
+  margin-bottom: 55px;
+}
+
+/* Patron & Chief Patron - same as Convenor */
+.patron-section .contact-card {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 217, 255, 0.1) 0%,
+    rgba(0, 217, 255, 0.05) 100%
+  );
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: 10px;
+  padding: 30px 25px;
+  max-width: 500px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+/* Hover same as Convenor */
+.patron-section .contact-card:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 217, 255, 0.15) 0%,
+    rgba(0, 217, 255, 0.1) 100%
+  );
+  border-color: rgba(0, 217, 255, 0.4);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Accent border difference */
+.chief-patron .contact-card {
+  border-left: 4px solid #ffb300; /* gold */
+}
+
+.patron .contact-card {
+  border-left: 4px solid #4caf50; /* green */
+}
+
+.patron-role {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #a9aeb4;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.patron-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Space Mono', monospace;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .patron-name {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .patron-name {
+    font-size: 16px;
+  }
 }
 
 /* Convenor Section */

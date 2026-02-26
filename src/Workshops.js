@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./workshops.css";
 import RegistrationForm from "./RegistrationForm";
 import { motion } from "framer-motion";
+import Footer from "./Footer";
 import uipath from './assets/uipath.jpeg';
 export default function Workshops() {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
@@ -142,6 +143,7 @@ export default function Workshops() {
       </motion.div>
 
       <RegistrationForm isOpen={isRegistrationOpen} onClose={handleClose} />
+      <Footer />
     </motion.div>
   );
 }
