@@ -227,7 +227,7 @@ if (formData.college === "Other") {
 }
 
   fetch(
-    "https://script.google.com/macros/s/AKfycbx3POzWr7jVggC0zbIq-pam1ZXSkeROYygl2BCLrpHWQrWZQbfbkL90fv-HPPQlS1uE/exec",
+    "https://script.google.com/macros/s/AKfycbxm_WluRSlc2EcBCZFYNautl7XNL1g9SDnkreGxNFS7kXGdLa1xIhorHtHzuKahcWYsdg/exec",
     {
       method: "POST",
       body: formDataToSend,
@@ -242,6 +242,11 @@ if (formData.college === "Other") {
           alert("⚠️ Screenshot already used!");
           return;
         }
+
+        if (result.status === "duplicate_ramco") {
+  alert("⚠️ You have already registered. Ramco students can register only once.");
+  return;
+}
 
         if (result.status === "success") {
           alert("🎉 Registration successful!");
