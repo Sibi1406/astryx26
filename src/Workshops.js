@@ -130,8 +130,24 @@ export default function Workshops() {
             create automation workflows using UIPath Studio.
           </p>
         </motion.div>
-
+<RegistrationForm isOpen={isRegistrationOpen} onClose={handleClose} />
+          <motion.div className="card" whileHover={{ x: 10 }}>
+  <h2 style={{ color: "#00f0ff" }}>Student Coordinators</h2>
+  <ul>
+    <li><b>Gopi  S</b></li>
+    <li><b>Janani P</b></li>
+     <li><b>Sibiah R</b></li>
+     <li><b>Sobika Joleen G J</b></li>
+  </ul>
+</motion.div>
+<motion.div className="card" whileHover={{ x: 10 }}>
+  <h2 style={{ color: "#00f0ff" }}>Faculty Coordinators</h2>
+  <ul>
+    <li><b>Mrs.P.Ramya</b></li>
+  </ul>
+</motion.div>
         <motion.div className="card" whileHover={{ x: 10 }}>
+         
           <h2 style={{ color: '#00f0ff' }}>Who Can Participate</h2>
           <ul>
             <li>Open to all college students</li>

@@ -12,6 +12,10 @@ import promptwarsImage from './assets/promptwar.jpeg';
 import codearenaImage from './assets/codearena.jpeg';
 import themastroImage from './assets/themastero.jpeg';
 import mysterymanorImage from './assets/mysterymanor.jpeg';
+import lyrixarenaImage from './assets/lyrixarena.jpeg';
+import blabberboxImage from './assets/blabberbox.jpeg';
+import franchisetableImage from './assets/iplauction.jpeg';
+import { image } from "framer-motion/client";
 
 export default function EventDetails() {
   const { eventId } = useParams();
@@ -98,6 +102,7 @@ export default function EventDetails() {
   image: codearenaImage,
   about: "Code Arena is a technical competition designed to evaluate participants’ conceptual understanding and practical programming skills through two structured rounds. The event focuses on problem-solving ability, logical reasoning, and hands-on coding knowledge.\n\nRound 1 – MCQ Assessment:\nThis round tests participants on core technical and general engineering concepts including Emerging Technologies, Engineering Fundamentals, Technology in Daily Life, and Logo to Invention. The objective is to assess awareness, reasoning skills, and application-based understanding.\n\nRound 2 – Code Debugging:\nShortlisted teams advance to the debugging round where participants are required to identify and correct errors in given programs. Programs will be provided in Python, C, or Java, and teams may choose the language of their preference. This round emphasizes analytical thinking, debugging skills, and logical accuracy.",
   team: { size: "2 members" },
+  image: lyrixarenaImage,
   coordinator: {
     faculty: "Dr.G.Mareeswari",
     student: "Poongothai S, Varun V, Thiraviyakumar J M, Santhiya S"
@@ -153,7 +158,7 @@ Finalists face real-time managerial scenarios and must respond like a leader und
   date: "March 14, 2026",
   time: "Afternoon Session",
   location: "C2L02",
-  image: "https://tse1.mm.bing.net/th/id/OIP.zdVc1nljewgC5dfZRfSQfgHaDy?pid=Api&h=220&P=0",
+  image: blabberboxImage,
   about: "Blabber Box is an exciting public speaking event that tests participants' confidence, spontaneity, and communication skills.The event consists of two rounds. \nIn Round 1, participants will choose a photo displayed on the screen, behind which a topic is hidden. Topics will be shared one day prior to the event to help participants prepare.\n\nAfter Round 1, an ice-breaking session with fun activities and refreshments will be conducted.Only five participants will qualify for Round 2.\n\n The Round 2 topics will be displayed on the website in advance. Qualified participants must select their topic based on luck through slot selection or balloon picking and speak on the chosen topic instantly.",
   team: { size: "Individual participation" },
   coordinator: {
@@ -171,7 +176,7 @@ Finalists face real-time managerial scenarios and must respond like a leader und
   date: "March 14, 2026",
   time: "Morning Session",
   location: "C2L03",
-  image: "https://tse3.mm.bing.net/th/id/OIP.D0E6ZiFm35HyZ5p63ySDrQHaDl?pid=Api&h=220&P=0",
+  image: lyrixarenaImage,
   about: "Lyrix Arena is an exciting music-based competition that tests participants’ song knowledge, listening skills, speed, confidence, and strategic thinking. The event consists of multiple engaging rounds designed to challenge participants through lyric recognition, audio identification, and competitive bidding.\n\nRound 1 – Reverse Lyrics:\nA song lyric will be played or displayed in reverse order. Participants must correctly identify the Song Name, Movie Name, and either the Singer or Music Director. Each question has a time limit of 20 seconds, testing quick recall and musical awareness.\n\nRound 2 – Audio Hunt Challenge:\nA short 5–8 second audio clip, which may be an intro, instrumental, or lyric, will be played. Participants must identify the song as quickly as possible. This is conducted in a buzzer-round format, and participants may continue the next line of the song for bonus points.\n\nRound 3 – Lyric Auction Battle:\nFinalist teams begin with 100 points. Lyric-based clues are auctioned, and teams bid their points to earn the chance to answer. Correct answers add points, while incorrect answers result in point deduction. The team with the highest total score wins the battle.\n\nBonus Round – Single Drop:\nA brief clue about a song is given. Participants may choose to answer at different clue levels, with marks awarded based on the clue taken. This round tests confidence and risk-taking ability.",
   team: { size: "2–3 members" },
   coordinator: {
@@ -189,7 +194,7 @@ Finalists face real-time managerial scenarios and must respond like a leader und
   date: "March 14, 2026",
   time: "Morning Session",
   location: "Seminar Hall",
-  image: "https://tse1.mm.bing.net/th/id/OIP.qfeS42uuBov7gbhu3G0fmQHaEK?pid=Api&h=220&P=0",
+  image: franchisetableImage,
   about: "The Franchise Table is an IPL-style franchise and player auction simulation event that recreates the excitement and strategy of a professional cricket auction. Participants experience real-time decision-making, budgeting, and team-building while managing an IPL franchise owner group. The event is conducted in two rounds on the same day, combining cricket knowledge with auction strategy and financial planning.\n\nRound 1 – Online Quiz (Qualifier):\nThe first round is an online quiz conducted on the same day as the main auction. The quiz tests participants’ knowledge of cricket, IPL history, player statistics, and auction strategies. Based on quiz performance, teams are shortlisted, and only the top 8 teams qualify for the main auction round.\n\nRound 2 – Main Auction Event:\nThe qualified top 8 teams participate in a live IPL-style auction. Each team represents an IPL franchise owner group and competes to build a complete squad within the given budget by bidding on players.\n\nTeam Formation:\n• Qualified Teams for Auction: 8\n• Members per Team: 4 participants\n• Each team represents one IPL franchise owner group\n\nFranchise Allocation:\nFranchises are allotted using a spinning wheel selection method. Each qualified team spins the wheel once, and the displayed franchise is assigned to the team. Franchise allocation is final, and no franchise auction will be conducted.\n\nBudget Allocation:\nEach team is provided with a total auction budget of 100 Crores.\n\nSquad Composition:\nEach team must select a total of 15 players with the following minimum requirements:\n• Batsmen: 5 (including 1 uncapped batsman – mandatory)\n• Bowlers: 4 (including 1 uncapped bowler – mandatory)\n• All-rounders: 4 (including 1 uncapped all-rounder – mandatory)\n• Wicket Keepers: 2 (mandatory)\n\nNationality Rules:\n• Minimum Indian players: 10\n• Maximum overseas players: 5\n\nTier-Based Player System:\n• Tier 1 – Base Price: 2 Crores\n• Tier 2 – Base Price: 1 Crore\n• Tier 3 – Base Price: 50 Lakhs (Uncapped)\n\nAuction Procedure:\nThe auctioneer announces player details along with the base price. Bidding starts from the base price, and teams increase bids according to tier-based increments. The highest bidder wins the player, and the winning bid amount is deducted from the team’s 100 Crore budget. If no team places a bid, the player is declared unsold.\n\nFinal Validation & Results:\nTeams are validated based on squad completion, budget management, and rule compliance. Each team must have exactly 15 players, include the required uncapped players, select a playing 11, and stay within the 100 Crore budget. Only the Winner and Runner-Up will be declared based on final validation scores.",
   team: { size: "4 members" },
   coordinator: {
