@@ -1692,3 +1692,14 @@ body {
     line-height: 1.1;
   }
 }
+
+
+/* FORCE RAMCO INSTITUTE OF TECHNOLOGY TO SINGLE LINE */
+@media (max-width: 480px) {
+  .top-info {
+    white-space: nowrap;
+    font-size: clamp(0.4rem, 3.8vw, 0.8rem);
+    letter-spacing: 0.6px;
+    text-align: center;
+  }
+}
