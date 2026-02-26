@@ -6,7 +6,7 @@ import RegistrationForm from "./RegistrationForm";
 import { motion } from "framer-motion";
 import paperparadeImage from './assets/paperparade.jpeg';
 import memecreationImage from './assets/memecreation.jpeg';
-import thinkink from './assets/think&ink.jpeg';
+import thinkink from './assets/think&ink.png';
 import techtraidImage from './assets/techtraid.jpeg';
 import promptwarsImage from './assets/promptwar.jpeg';
 import codearenaImage from './assets/codearena.jpeg';
