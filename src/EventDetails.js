@@ -102,7 +102,6 @@ export default function EventDetails() {
   image: codearenaImage,
   about: "Code Arena is a technical competition designed to evaluate participants’ conceptual understanding and practical programming skills through two structured rounds. The event focuses on problem-solving ability, logical reasoning, and hands-on coding knowledge.\n\nRound 1 – MCQ Assessment:\nThis round tests participants on core technical and general engineering concepts including Emerging Technologies, Engineering Fundamentals, Technology in Daily Life, and Logo to Invention. The objective is to assess awareness, reasoning skills, and application-based understanding.\n\nRound 2 – Code Debugging:\nShortlisted teams advance to the debugging round where participants are required to identify and correct errors in given programs. Programs will be provided in Python, C, or Java, and teams may choose the language of their preference. This round emphasizes analytical thinking, debugging skills, and logical accuracy.",
   team: { size: "2 members" },
-  image: lyrixarenaImage,
   coordinator: {
     faculty: "Dr.G.Mareeswari",
     student: "Poongothai S, Varun V, Thiraviyakumar J M, Santhiya S"
