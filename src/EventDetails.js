@@ -55,8 +55,7 @@ export default function EventDetails() {
   },
   prize: [
     { place: "1st Place", amount: "Shield + Certificate" },
-    { place: "2nd Place", amount: "Shield + Certificate" },
-    { place: "3rd Place", amount: "Shield + Certificate" }
+    { place: "2nd Place", amount: "Shield + Certificate" }
   ]
 },
     vibecoding: {
@@ -90,8 +89,7 @@ export default function EventDetails() {
   },
   prize: [
     { place: "1st Place", amount: "Shield + Certificate" },
-    { place: "2nd Place", amount: "Shield + Certificate" },
-    { place: "3rd Place", amount: "Shield + Certificate" }
+    { place: "2nd Place", amount: "Shield + Certificate" }
   ]
 },
     codearena: {
@@ -108,8 +106,7 @@ export default function EventDetails() {
   },
   prize: [
     { place: "1st Place", amount: "Shield + Certificate" },
-    { place: "2nd Place", amount: "Shield + Certificate" },
-    { place: "3rd Place", amount: "Shield + Certificate" }
+    { place: "2nd Place", amount: "Shield + Certificate" }
   ]
 },
     mysterymanor: {
@@ -125,9 +122,8 @@ export default function EventDetails() {
     student: "Valli M, Sridhar N, Ram Selvalakshmi M, Arudayar Arun D"
   },
   prize: [
-    { place: "1st Place", amount: "Shield + Certificate" },
-    { place: "2nd Place", amount: "Shield + Certificate" },
-    { place: "3rd Place", amount: "Shield + Certificate" }
+    { place: "1st Place", amount: "Gift + Certificate" },
+    { place: "2nd Place", amount: "Gift + Certificate" }
   ]
 },
     themaestro: {
@@ -165,9 +161,8 @@ Finalists face real-time managerial scenarios and must respond like a leader und
     student: "Rasith Meeran A, Selvagayathri P, D Vishal Nanda, Pooja Shree S"
   },
   prize: [
-    { place: "1st Place", amount: "Shield + Certificate" },
-    { place: "2nd Place", amount: "Shield + Certificate" },
-    { place: "3rd Place", amount: "Shield + Certificate" }
+    { place: "1st Place", amount: "Gift + Certificate" },
+    { place: "2nd Place", amount: "Gift + Certificate" }
   ]
 },
     lyricalhunt: {
@@ -183,9 +178,8 @@ Finalists face real-time managerial scenarios and must respond like a leader und
     student: "Jeyalakshmi A, Saravana Kumar V, Shri Vethisha S, Maharaja T"
   },
   prize: [
-    { place: "1st Place", amount: "Shield + Certificate" },
-    { place: "2nd Place", amount: "Shield + Certificate" },
-    { place: "3rd Place", amount: "Shield + Certificate" }
+    { place: "1st Place", amount: "Gift + Certificate" },
+    { place: "2nd Place", amount: "Gift + Certificate" }
   ]
 },
   franchisetable: {
@@ -218,9 +212,8 @@ Finalists face real-time managerial scenarios and must respond like a leader und
     student: "Pramila Devi D, Parasuram C A, Iptika D, Vishal P"
   },
   prize: [
-    { place: "1st Place", amount: "Shield + Certificate" },
-    { place: "2nd Place", amount: "Shield + Certificate" },
-    { place: "3rd Place", amount: "Shield + Certificate" }
+    { place: "1st Place", amount: "Gift+ Certificate" },
+    { place: "2nd Place", amount: "Gift + Certificate" }
   ]
 }
   };
