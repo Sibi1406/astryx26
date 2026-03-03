@@ -47,7 +47,7 @@ export default function EventDetails() {
   time: "10:00 AM - 11:00 AM",
   location: "Data Science Lab",
   image: thinkink,
-  about: "Think & Ink is a Poster Designing and Presentation event that encourages participants to express powerful ideas through visual creativity and effective communication. The event provides a platform to showcase social awareness, technological understanding, innovation, and artistic skills through impactful poster designs. Participants are required to design a poster based on the given themes and present the concept clearly before the judges.\n\nNon-Technical Themes:\n1. From Youth to Vote: My Voice, My Responsibility\n\n2. Invent the Game. Inspire the World\n\nTechnical Themes:\n1. Chatbots & Virtual Assistants: The Smart Voices of Tomorrow\n\n2. 5G Today, 6G Tomorrow: Connecting the Future\n\n",
+  about: "Think & Ink is a Poster Designing and Presentation event that encourages participants to express powerful ideas through visual creativity and effective communication. The event provides a platform to showcase social awareness, technological understanding, innovation, and artistic skills through impactful poster designs. Participants are required to design a poster on spot based on the given themes and present the concept clearly before the judges.\n\n",
   team: { size: "Individual participation" },
   coordinator: {
     faculty: "Mrs.G.Sivasathiya",
