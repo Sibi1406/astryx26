@@ -134,10 +134,10 @@ export default function Workshops() {
           <motion.div className="card" whileHover={{ x: 10 }}>
   <h2 style={{ color: "#00f0ff" }}>Student Coordinators</h2>
   <ul>
-    <li><b>Gopi  S</b></li>
-    <li><b>Janani P</b></li>
-     <li><b>Sibiah R</b></li>
-     <li><b>Sobika Joleen G J</b></li>
+    <li><b>Gopi  S - III IT</b></li>
+    <li><b>Janani P - III IT</b></li>
+     <li><b>Sibiah R - III IT</b></li>
+     <li><b>Sobika Joleen G J - III IT</b></li>
   </ul>
 </motion.div>
 <motion.div className="card" whileHover={{ x: 10 }}>

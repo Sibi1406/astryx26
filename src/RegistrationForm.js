@@ -98,9 +98,9 @@ const verifyPaymentOCR = async (file) => {
 
     // ✅ UPI fragment check (reliable)
     const upiValid =
-      t.includes("arjun") &&
-      t.includes("220306") &&
-      t.includes("oksbi");
+      t.includes("ritotherfees") &&(
+      t.includes("700")|| t.includes("7oo")) &&
+      t.includes("fbl");
 
     if (!upiValid) {
       return { ok: false, msg: "❌ Payment not sent to correct UPI ID" };
@@ -435,7 +435,7 @@ if (formData.college === "Other") {
             <div className="form-group">
               <label>Scan to Pay (₹200) *</label>
               <div className="qr-container">
-                <img src={require("./assets/qr-code.jpeg")} alt="Payment QR Code" className="qr-image" />
+                <img src={require("./assets/qr-code.png")} alt="Payment QR Code" className="qr-image" />
               </div>
             </div>
           )}

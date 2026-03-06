@@ -54,8 +54,7 @@ export default function EventDetails() {
     student: "Gayathri K, Naveenkumar R S, Hari Eswar M, Harini K"
   },
   prize: [
-    { place: "1st Place", amount: "Shield + Certificate" },
-    { place: "2nd Place", amount: "Shield + Certificate" }
+    { place: "Prize", amount: "Shield + Certificate" }
   ]
 },
     vibecoding: {
@@ -88,8 +87,7 @@ export default function EventDetails() {
     student: "Jeeva Sri M, Muniraj M, Abinaya N, SivaKumar M"
   },
   prize: [
-    { place: "1st Place", amount: "Shield + Certificate" },
-    { place: "2nd Place", amount: "Shield + Certificate" }
+    { place: "Prize", amount: "Shield + Certificate" }
   ]
 },
     codearena: {
@@ -105,8 +103,7 @@ export default function EventDetails() {
     student: "Poongothai S, Varun V, Thiraviyakumar J M, Santhiya S"
   },
   prize: [
-    { place: "1st Place", amount: "Shield + Certificate" },
-    { place: "2nd Place", amount: "Shield + Certificate" }
+    { place: "Prize", amount: "Shield + Certificate" }
   ]
 },
     mysterymanor: {
@@ -122,8 +119,7 @@ export default function EventDetails() {
     student: "Valli M, Sridhar N, Ram Selvalakshmi M, Arudayar Arun D"
   },
   prize: [
-    { place: "1st Place", amount: "Gift + Certificate" },
-    { place: "2nd Place", amount: "Gift + Certificate" }
+    { place: "Prize", amount: "Shield + Certificate" }
   ]
 },
     themaestro: {
@@ -161,8 +157,7 @@ Finalists face real-time managerial scenarios and must respond like a leader und
     student: "Rasith Meeran A, Selvagayathri P, D Vishal Nanda, Pooja Shree S"
   },
   prize: [
-    { place: "1st Place", amount: "Gift + Certificate" },
-    { place: "2nd Place", amount: "Gift + Certificate" }
+    { place: "Prize", amount: "Shield + Certificate" }
   ]
 },
     lyricalhunt: {
@@ -178,8 +173,7 @@ Finalists face real-time managerial scenarios and must respond like a leader und
     student: "Jeyalakshmi A, Saravana Kumar V, Shri Vethisha S, Maharaja T"
   },
   prize: [
-    { place: "1st Place", amount: "Gift + Certificate" },
-    { place: "2nd Place", amount: "Gift + Certificate" }
+    { place: "Prize", amount: "Shield + Certificate" }
   ]
 },
   franchisetable: {
@@ -188,15 +182,14 @@ Finalists face real-time managerial scenarios and must respond like a leader und
   time: "Morning Session",
   location: "Seminar Hall",
   image: franchisetableImage,
-  about: "The Franchise Table is an IPL-style franchise and player auction simulation event that recreates the excitement and strategy of a professional cricket auction. Participants experience real-time decision-making, budgeting, and team-building while managing an IPL franchise owner group. The event is conducted in two rounds on the same day, combining cricket knowledge with auction strategy and financial planning.\n\nRound 1 – Online Quiz (Qualifier):\nThe first round is an online quiz conducted on the same day as the main auction. The quiz tests participants’ knowledge of cricket, IPL history, player statistics, and auction strategies. Based on quiz performance, teams are shortlisted, and only the top 8 teams qualify for the main auction round.\n\nRound 2 – Main Auction Event:\nThe qualified top 8 teams participate in a live IPL-style auction. Each team represents an IPL franchise owner group and competes to build a complete squad within the given budget by bidding on players.\n\nTeam Formation:\n• Qualified Teams for Auction: 8\n• Members per Team: 4 participants\n• Each team represents one IPL franchise owner group\n\nFranchise Allocation:\nFranchises are allotted using a spinning wheel selection method. Each qualified team spins the wheel once, and the displayed franchise is assigned to the team. Franchise allocation is final, and no franchise auction will be conducted.\n\nBudget Allocation:\nEach team is provided with a total auction budget of 100 Crores.\n\nSquad Composition:\nEach team must select a total of 15 players with the following minimum requirements:\n• Batsmen: 5 (including 1 uncapped batsman – mandatory)\n• Bowlers: 4 (including 1 uncapped bowler – mandatory)\n• All-rounders: 4 (including 1 uncapped all-rounder – mandatory)\n• Wicket Keepers: 2 (mandatory)\n\nNationality Rules:\n• Minimum Indian players: 10\n• Maximum overseas players: 5\n\nTier-Based Player System:\n• Tier 1 – Base Price: 2 Crores\n• Tier 2 – Base Price: 1 Crore\n• Tier 3 – Base Price: 50 Lakhs (Uncapped)\n\nAuction Procedure:\nThe auctioneer announces player details along with the base price. Bidding starts from the base price, and teams increase bids according to tier-based increments. The highest bidder wins the player, and the winning bid amount is deducted from the team’s 100 Crore budget. If no team places a bid, the player is declared unsold.\n\nFinal Validation & Results:\nTeams are validated based on squad completion, budget management, and rule compliance. Each team must have exactly 15 players, include the required uncapped players, select a playing 11, and stay within the 100 Crore budget. Only the Winner and Runner-Up will be declared based on final validation scores.",
+  about: "The Franchise Table is an IPL-style franchise and player auction simulation event that recreates the excitement and strategy of a professional cricket auction. Participants experience real-time decision-making, budgeting, and team-building while managing an IPL franchise owner group. The event is conducted in two rounds on the same day, combining cricket knowledge with auction strategy and financial planning.\n\nRound 1 – Online Quiz (Qualifier):\nThe first round is an online quiz conducted on the same day as the main auction. The quiz tests participants’ knowledge of cricket, IPL history, player statistics, and auction strategies. Based on quiz performance, teams are shortlisted, and only the top 8 teams qualify for the main auction round.\n\nRound 2 – Main Auction Event:\nThe qualified top 8 teams participate in a live IPL-style auction. Each team represents an IPL franchise owner group and competes to build a complete squad within the given budget by bidding on players.\n\nTeam Formation:\n• Qualified Teams for Auction: 8\n• Members per Team: 4 participants\n• Each team represents one IPL franchise owner group\n\nFranchise Allocation:\nFranchises are allotted using a spinning wheel selection method. Each qualified team spins the wheel once, and the displayed franchise is assigned to the team. Franchise allocation is final, and no franchise auction will be conducted.\n\nBudget Allocation:\nEach team is provided with a total auction budget of 100 Crores.\n\nSquad Composition:\nEach team must select a total of 15 players with the following minimum requirements:\n• Batsmen: 5 (including 1 uncapped batsman – mandatory)\n• Bowlers: 4 (including 1 uncapped bowler – mandatory)\n• All-rounders: 4 (including 1 uncapped all-rounder – mandatory)\n• Wicket Keepers: 2 (mandatory)\n\nNationality Rules:\n• Minimum Indian players: 10\n• Maximum overseas players: 5\n\nTier-Based Player System:\n• Tier 1 – Base Price: 2 Crores\n• Tier 2 – Base Price: 1 Crore\n• Tier 3 – Base Price: 50 Lakhs (Uncapped)\n\nAuction Procedure:\nThe auctioneer announces player details along with the base price. Bidding starts from the base price, and teams increase bids according to tier-based increments. The highest bidder wins the player, and the winning bid amount is deducted from the team’s 100 Crore budget. If no team places a bid, the player is declared unsold.\n\nFinal Validation & Results:\nTeams are validated based on squad completion, budget management, and rule compliance. Each team must have exactly 15 players, include the required uncapped players, select a playing 11, and stay within the 100 Crore budget. Only the Winner and Runner-Up will be declared based on final validation scores.\n NOTE: Students are asked to bring laptop",
   team: { size: "4 members" },
   coordinator: {
     faculty: "Mrs.A.Alagulakshmi",
     student: "Saraswathi M, Vishal Kumar S, Karthik M, Karthiga R"
   },
   prize: [
-    { place: "1st Place", amount: "Shield + Certificate" },
-    { place: "2nd Place", amount: "Shield + Certificate" }
+    { place: "Prize", amount: "Shield + Certificate" }
   ]
 },
     humour404: {
@@ -212,8 +205,7 @@ Finalists face real-time managerial scenarios and must respond like a leader und
     student: "Pramila Devi D, Parasuram C A, Iptika D, Vishal P"
   },
   prize: [
-    { place: "1st Place", amount: "Gift+ Certificate" },
-    { place: "2nd Place", amount: "Gift + Certificate" }
+    { place: "Prize", amount: "Shield + Certificate" }
   ]
 }
   };
