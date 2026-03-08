@@ -1,0 +1,172 @@
+
+function doPost(e) {
+  try {
+    const spreadsheet = SpreadsheetApp.openById(
+      "1_dCju56J7wF-gCdkr9Gxo9MXIYlUYDdmepVpSjyHSU0"
+    );
+
+    const name = e.parameter.name || "";
+    const email = e.parameter.email || "";
+    const mobile = e.parameter.mobileNumber || "";
+    const college = e.parameter.college || "";
+    const department = e.parameter.department || "";
+    const year = e.parameter.year || "";
+
+    const selectedEvents = e.parameter.selectedEvents
+      ? e.parameter.selectedEvents.split(", ")
+      : [];
+if (selectedEvents.length === 0) {
+  throw new Error("No events selected");
+}
+    const paymentSheet = spreadsheet.getSheetByName("PaymentVerification");
+    if (!paymentSheet) throw new Error("PaymentVerification sheet missing");
+
+let hash = "";
+let fileUrl = "";
+
+// 🔒 ONLY verify & store payment if NOT Ramco
+if (college !== "Ramco Institution of Technology") {
+  const base64File = e.parameter.paymentScreenshot;
+  if (!base64File) throw new Error("No screenshot received");
+
+  const bytes = Utilities.base64Decode(base64File);
+  const blob = Utilities.newBlob(bytes, "image/png", "payment.png");
+
+  // 🔑 Create MD5 hash (duplicate prevention)
+  hash = Utilities.base64Encode(
+    Utilities.computeDigest(
+      Utilities.DigestAlgorithm.MD5,
+      blob.getBytes()
+    )
+  );
+
+  // 🔁 Duplicate check
+  const existingData = paymentSheet.getDataRange().getValues();
+  for (let i = 1; i < existingData.length; i++) {
+    if (existingData[i][4] === hash) {
+      return ContentService.createTextOutput(
+        JSON.stringify({ status: "duplicate" })
+      ).setMimeType(ContentService.MimeType.JSON);
+    }
+  }
+
+  // 📂 SAVE FILE TO DRIVE
+  const folder = DriveApp.getFolderById("1IiUqIxhWVjw_ne5Nl6x6T7iaZhtfKytb");
+
+  const timestamp = Utilities.formatDate(
+    new Date(),
+    Session.getScriptTimeZone(),
+    "yyyyMMdd_HHmmss"
+  );
+
+  const fileName = `${name}_${mobile}_${timestamp}.png`;
+
+  const savedFile = folder.createFile(blob.setName(fileName));
+  fileUrl = savedFile.getUrl(); // optional
+}
+
+
+    // ✅ ALWAYS add to PaymentVerification
+    paymentSheet.appendRow([
+  name,
+  email,
+  mobile,
+  selectedEvents.join(", "),
+  hash,          // empty for Ramco
+  fileUrl,       // 🔗 Drive link
+  new Date()
+]);
+
+    // ✅ Add to respective event sheets
+    selectedEvents.forEach(eventName => {
+      const sheet = spreadsheet.getSheetByName(eventName);
+      if (sheet) {
+        sheet.appendRow([
+          name,
+          email,
+          mobile,
+          college,
+          department,
+          year,
+          new Date()
+        ]);
+      }
+    });
+
+    // 📧 Mail (optional but safe)
+   if (email && email.includes("@")) {
+  MailApp.sendEmail({
+    to: email,
+    subject: "🎉 Astryx'26 Registration Confirmed",
+    htmlBody: `
+      <div style="font-family: Arial, Helvetica, sans-serif; background-color: #f5f7fb; padding: 20px;">
+        <div style="max-width: 600px; margin: auto; background: #ffffff; padding: 25px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.08);">
+          
+          <h2 style="color: #1e88e5; text-align: center;">Astryx'26 – Registration Confirmed 🎉</h2>
+          
+          <p>Dear <strong>${name}</strong>,</p>
+
+          <p>
+            Greetings from the <strong>Organizing Committee</strong>!
+          </p>
+
+          <p>
+            Thank you for successfully registering for <strong>Astryx'26</strong>.
+            We are delighted to confirm your participation in our upcoming symposium.
+          </p>
+
+          <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;" />
+
+          <p>
+            <strong>📅 Event Date:</strong> March 14, 2026<br/>
+            <strong>🕘 Reporting Time:</strong> 8:30 AM<br/>
+            <strong>🎯 Registered Events:</strong> ${selectedEvents.join(", ")}
+          </p>
+
+          <p>
+            Please carry your <strong>college ID card</strong> and this
+            <strong>confirmation email</strong> (soft copy is acceptable) on the day of the event.
+          </p>
+
+          <p>
+            We look forward to your active participation and hope you have a great
+            learning and networking experience with us.
+          </p>
+
+          <p>
+            If you have any queries, feel free to contact us at
+            <a href="mailto:astryx.26@gmail.com">astryx.26@gmail.com</a>
+          </p>
+
+          <br/>
+
+          <p style="margin-bottom: 5px;">
+            Best Regards,<br/>
+            <strong>Organizing Committee</strong><br/>
+            Department of Information Technology<br/>
+            <strong>Ramco Institute of Technology</strong>
+          </p>
+
+          <hr style="border: none; border-top: 1px solid #ddd; margin-top: 25px;" />
+
+          <p style="font-size: 12px; color: #777; text-align: center;">
+            This is an automated confirmation email. Please do not reply.
+          </p>
+
+        </div>
+      </div>
+    `
+  });
+}
+
+    return ContentService.createTextOutput(
+      JSON.stringify({ status: "success" })
+    ).setMimeType(ContentService.MimeType.JSON);
+
+  } catch (err) {
+    Logger.log(err);
+    return ContentService.createTextOutput(
+      JSON.stringify({ status: "error", message: err.toString() })
+    ).setMimeType(ContentService.MimeType.JSON);
+  }
+}

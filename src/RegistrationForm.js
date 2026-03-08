@@ -394,7 +394,7 @@ if (formData.college === "Other") {
           </div>
 
           <div className="form-group">
-            <label>Select Events *</label>
+            <label>Select Events (4 event max) *</label>
             <div className="events-checkbox-container">
               <div className="events-column">
                 <div className="events-column-title">Technical</div>
