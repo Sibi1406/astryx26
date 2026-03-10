@@ -433,7 +433,7 @@ if (formData.college === "Other") {
           {/* Payment QR Code */}
           {formData.college === "Other" && (
             <div className="form-group">
-              <label>Scan to Pay (Offline - ₹200 / Online - ₹100) *</label>
+              <label>Scan to Pay ( ₹200) *</label>
               <div className="qr-container">
                 <img src={require("./assets/qr-code.png")} alt="Payment QR Code" className="qr-image" />
               </div>
