@@ -97,6 +97,7 @@ export default function Workshops() {
               <span><b>Date:</b> March 14, 2026</span>
               <span><b>Time:</b> 1:15 PM - 4:00 PM</span>
               <span><b>Location:</b> SEMINAR HALL </span>
+              <span><b>Mode:</b> Offline/Online </span>
             </p>
           </div>
           <motion.button
@@ -128,6 +129,7 @@ export default function Workshops() {
             Participants will learn workflow automation, bot development, process mining,
             and real-world automation solutions. Explore industry best practices and
             create automation workflows using UIPath Studio.
+            <h3 style={{color:'red'}}> Participants are Requested to bring laptop!!!</h3>
           </p>
         </motion.div>
 <RegistrationForm isOpen={isRegistrationOpen} onClose={handleClose} />
@@ -143,7 +145,7 @@ export default function Workshops() {
 <motion.div className="card" whileHover={{ x: 10 }}>
   <h2 style={{ color: "#00f0ff" }}>Faculty Coordinators</h2>
   <ul>
-    <li><b>Mrs.P.Ramya</b></li>
+    <li><b>Mrs.P.Ramya - AP/IT</b></li>
   </ul>
 </motion.div>
         <motion.div className="card" whileHover={{ x: 10 }}>

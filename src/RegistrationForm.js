@@ -19,7 +19,7 @@ export default function RegistrationForm({ isOpen, onClose }) {
   const [verificationError, setVerificationError] = useState("");
 
   const eventsList = [
-    "PAPER PARADE",
+    "PAPER PARADE (Offline/Online)",
     "THINK & INK",
     "PROMPT WARS",
     "TECH-TRAID",
@@ -30,16 +30,16 @@ export default function RegistrationForm({ isOpen, onClose }) {
     "LYRIX ARENA",
     "THE FRANCHISE TABLE",
     "404 HUMAN NOT FOUND",
-    "UIPATH UNLOCKED- WORKSHOP",
+    "UIPATH UNLOCKED- WORKSHOP (Offline/Online)",
   ];
 
   const technicalEvents = new Set([
-    "PAPER PARADE",
+    "PAPER PARADE (Offline/Online)",
     "THINK & INK",
     "PROMPT WARS",
     "TECH-TRAID",
     "CODE ARENA",
-    "UIPATH UNLOCKED- WORKSHOP",
+    "UIPATH UNLOCKED- WORKSHOP (Offline/Online)",
   ]);
 
   const nonTechnicalEvents = new Set([
@@ -433,7 +433,7 @@ if (formData.college === "Other") {
           {/* Payment QR Code */}
           {formData.college === "Other" && (
             <div className="form-group">
-              <label>Scan to Pay (₹200) *</label>
+              <label>Scan to Pay (Offline - ₹200 / Online - ₹100) *</label>
               <div className="qr-container">
                 <img src={require("./assets/qr-code.png")} alt="Payment QR Code" className="qr-image" />
               </div>
@@ -466,7 +466,7 @@ if (formData.college === "Other") {
                 <>
                   {screenshotVerified && (
                     <div style={{ color: "#00d9ff", fontSize: "12px", marginTop: "8px", fontWeight: "bold" }}>
-                      ✓ Screenshot verified - 200 rupees payment detected
+                      ✓ Screenshot verified
                     </div>
                   )}
                   {verificationError && (
