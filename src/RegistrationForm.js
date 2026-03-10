@@ -227,7 +227,7 @@ if (formData.college === "Other") {
 }
 
   fetch(
-    "https://script.google.com/macros/s/AKfycbxm_WluRSlc2EcBCZFYNautl7XNL1g9SDnkreGxNFS7kXGdLa1xIhorHtHzuKahcWYsdg/exec",
+    "https://script.google.com/macros/s/AKfycbxa73RdWEVVAikIhybdQ1fAJgd6UDDZ_fuJMBmiAZAmqabcO7yt8sdgYjtz10VU7_tzsA/exec",
     {
       method: "POST",
       body: formDataToSend,
