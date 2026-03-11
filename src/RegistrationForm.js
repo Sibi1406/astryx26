@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Tesseract from "tesseract.js";
 import "./registration.css";
 
 export default function RegistrationForm({ isOpen, onClose }) {
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,9 +14,6 @@ export default function RegistrationForm({ isOpen, onClose }) {
     selectedEvents: [],
     paymentScreenshot: null,
   });
-
-  const [screenshotVerified, setScreenshotVerified] = useState(false);
-  const [verificationError, setVerificationError] = useState("");
 
   const eventsList = [
     "PAPER PARADE (Offline/Online)",
@@ -33,29 +30,18 @@ export default function RegistrationForm({ isOpen, onClose }) {
     "UIPATH UNLOCKED- WORKSHOP (Offline/Online)",
   ];
 
-  const technicalEvents = new Set([
-    "PAPER PARADE (Offline/Online)",
-    "THINK & INK",
-    "PROMPT WARS",
-    "TECH-TRAID",
-    "CODE ARENA",
-    "UIPATH UNLOCKED- WORKSHOP (Offline/Online)",
-  ]);
-
-  const nonTechnicalEvents = new Set([
-    "MYSTERY MANOR",
-    "THE MAESTRO",
-    "BLABBER BOX",
-    "LYRIX ARENA",
-    "THE FRANCHISE TABLE",
-    "404 HUMAN NOT FOUND",
-  ]);
-
   const departments = ["CSE", "IT", "CSBS", "AIDS", "AI/ML", "CYBERSECURITY", "Others"];
   const years = ["1st Year", "2nd Year", "3rd Year", "4th Year"];
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+
+    // Block Ramco students
+    if (name === "college" && value === "Ramco Institution of Technology") {
+      alert("🚫 Registration closed for Ramco students.");
+      return;
+    }
+
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -73,13 +59,11 @@ export default function RegistrationForm({ isOpen, onClose }) {
         };
       }
 
-      // enforce max 4 selections
       if (prev.selectedEvents.length >= 4) {
         alert("You can select a maximum of 4 events.");
         return prev;
       }
 
-      // allow add
       return {
         ...prev,
         selectedEvents: [...prev.selectedEvents, event],
@@ -87,212 +71,93 @@ export default function RegistrationForm({ isOpen, onClose }) {
     });
   };
 
-const verifyPaymentOCR = async (file) => {
-  try {
-    const { data: { text } } = await Tesseract.recognize(file, "eng");
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
 
-    console.log("OCR RAW TEXT ↓↓↓");
-    console.log(text);
+    const validTypes = ["image/jpeg", "image/png", "image/jpg"];
 
-    const t = text.toLowerCase();
-
-    // ✅ UPI fragment check (reliable)
-    const upiValid =
-      t.includes("ritotherfees") &&(
-      t.includes("700")|| t.includes("7oo")) &&
-      t.includes("fbl");
-
-    if (!upiValid) {
-      return { ok: false, msg: "❌ Payment not sent to correct UPI ID" };
+    if (!validTypes.includes(file.type)) {
+      alert("Upload JPG or PNG image only.");
+      return;
     }
 
-    // ✅ Status check (reliable)
-    if (!t.includes("completed")) {
-      return { ok: false, msg: "❌ Payment not completed" };
+    if (file.size > 5 * 1024 * 1024) {
+      alert("File size must be under 5MB.");
+      return;
     }
 
-    // ⚠️ DO NOT CHECK AMOUNT VIA OCR
-    // Amount OCR is unreliable in Google Pay screenshots
+    setFormData((prev) => ({
+      ...prev,
+      paymentScreenshot: file,
+    }));
+  };
 
-    return { ok: true };
-  } catch (err) {
-    console.error("OCR ERROR:", err);
-    return {
-      ok: false,
-      msg: "❌ Unable to read screenshot. Please upload a clearer image.",
-    };
-  }
-};
+  const fileToBase64 = (file) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result.split(",")[1]);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      alert("Enter a valid email address.");
+      return;
+    }
 
+    // Phone validation
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(formData.mobileNumber)) {
+      alert("Enter a valid 10 digit phone number.");
+      return;
+    }
 
-const handleFileChange = async (e) => {
-  const file = e.target.files[0];
-  if (!file) return;
+    // Screenshot required
+    if (!formData.paymentScreenshot) {
+      alert("Upload payment screenshot.");
+      return;
+    }
 
-  console.log("FILE SELECTED:", file.name);
+    const formDataToSend = new FormData();
 
-  // 🔥 SAVE FILE FIRST (THIS FIXES UI)
-  setFormData((prev) => ({
-    ...prev,
-    paymentScreenshot: file,
-  }));
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("mobileNumber", formData.mobileNumber);
+    formDataToSend.append("college", formData.collegeName);
+    formDataToSend.append("department", formData.department);
+    formDataToSend.append("year", formData.year);
+    formDataToSend.append("selectedEvents", formData.selectedEvents.join(", "));
 
-  setVerificationError("⏳ Verifying payment screenshot...");
-  setScreenshotVerified(false);
+    const base64Image = await fileToBase64(formData.paymentScreenshot);
+    formDataToSend.append("paymentScreenshot", base64Image);
 
-  // File validations
-  const validTypes = ["image/jpeg", "image/png", "image/jpg"];
-  if (!validTypes.includes(file.type)) {
-    setVerificationError("❌ Upload JPG or PNG image only.");
-    return;
-  }
-
-  if (file.size > 5 * 1024 * 1024) {
-    setVerificationError("❌ File size must be under 5MB.");
-    return;
-  }
-
-  // OCR verification
-  const result = await verifyPaymentOCR(file);
-
-  if (!result.ok) {
-    setVerificationError(result.msg);
-    setScreenshotVerified(false);
-    return;
-  }
-
-  setScreenshotVerified(true);
-  setVerificationError("✅ Payment verified");
-};
-
-
-
-const fileToBase64 = (file) =>
-  new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result.split(",")[1]);
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  // Email validation
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(formData.email)) {
-    alert("Please enter a valid email address.");
-    return;
-  }
-
-  // Phone number validation (10 digits for Indian numbers)
-  const phoneRegex = /^[0-9]{10}$/;
-  if (!phoneRegex.test(formData.mobileNumber.replace(/\s|-/g, ""))) {
-    alert("Please enter a valid 10-digit phone number.");
-    return;
-  }
-
-  // Only require screenshot if college is "Other"
-  // 🔒 PAYMENT CHECK (ONLY FOR OTHER COLLEGES)
-if (formData.college === "Other") {
-  if (!formData.paymentScreenshot) {
-    alert("Please upload the payment screenshot.");
-    return;
-  }
-
-  if (!screenshotVerified) {
-    alert("Please upload a valid payment screenshot.");
-    return;
-  }
-  }
-
-  // If college is "Other", use collegeName; otherwise use college name
-  const finalCollege = formData.college === "Other" ? formData.collegeName : formData.college;
-
-  const formDataToSend = new FormData();
-  formDataToSend.append("name", formData.name);
-  formDataToSend.append("email", formData.email);
-  formDataToSend.append("mobileNumber", formData.mobileNumber);
-  formDataToSend.append("college", finalCollege);
-  formDataToSend.append("department", formData.department);
-  formDataToSend.append("year", formData.year);
-  formDataToSend.append(
-    "selectedEvents",
-    formData.selectedEvents.join(", ")
-  );
-  if (formData.paymentScreenshot) {
-  const base64Image = await fileToBase64(formData.paymentScreenshot);
-  formDataToSend.append("paymentScreenshot", base64Image);
-}
-
-  fetch(
-    "https://script.google.com/macros/s/AKfycby4MBHoPwX4F4aNadzI4jGta-t2GH_HVBv8-S35yAsEvM4zxDbv-BH73TP9mTLVjYy8/exec",
-    {
+    fetch("https://script.google.com/macros/s/AKfycby4MBHoPwX4F4aNadzI4jGta-t2GH_HVBv8-S35yAsEvM4zxDbv-BH73TP9mTLVjYy8/exec", {
       method: "POST",
       body: formDataToSend,
-    }
-  )
-    .then((res) => res.text())   // 👈 IMPORTANT (NOT res.json)
-    .then((data) => {
-      try {
-        const result = JSON.parse(data);
-
-        
-
-        if (result.status === "duplicate_ramco") {
-  alert("⚠️ You have already registered. Ramco students can register only once.");
-  return;
-}
-
-        if (result.status === "success") {
-          alert("🎉 Registration successful!");
-          resetForm();
-          onClose();
-        } else {
-          alert("Error: " + (result.message || "Registration failed"));
-        }
-      } catch (parseError) {
-        console.error("Parse error:", parseError, "Response:", data);
-        alert("❌ Error processing response. Please try again.");
-      }
     })
-    .catch((err) => {
-      console.error("Fetch error:", err);
-      alert("❌ Submission failed. Please check your internet connection and try again.");
-    });
-};
-  const resetForm = () => {
-    setFormData({
-      name: "",
-      email: "",
-      mobileNumber: "", 
-      college: "",
-      collegeName: "",
-      department: "",
-      year: "",
-      selectedEvents: [],
-      paymentScreenshot: null,
-    });
-    setScreenshotVerified(false);
-    setVerificationError("");
+      .then((res) => res.text())
+      .then(() => {
+        alert("🎉 Registration successful!");
+        onClose();
+      })
+      .catch(() => {
+        alert("❌ Submission failed.");
+      });
   };
 
   if (!isOpen) return null;
 
   return (
-    <div
-  className="registration-modal-overlay"
-  onClick={(e) => {
-    if (e.target.classList.contains("registration-modal-overlay")) {
-      onClose();
-    }
-  }}
->
+    <div className="registration-modal-overlay" onClick={onClose}>
       <div className="registration-modal" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close-btn" onClick={onClose}>
-          ✕
-        </button>
+
+        <button className="modal-close-btn" onClick={onClose}>✕</button>
 
         <h2 className="modal-title">Event Registration</h2>
 
@@ -300,46 +165,22 @@ if (formData.college === "Other") {
 
           <div className="form-group">
             <label>Name *</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              required
-            />
+            <input type="text" name="name" value={formData.name} onChange={handleInputChange} required />
           </div>
 
           <div className="form-group">
             <label>Email *</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-            />
+            <input type="email" name="email" value={formData.email} onChange={handleInputChange} required />
           </div>
 
           <div className="form-group">
-            <label>Mobile Number *</label>
-            <input
-              type="tel"
-              name="mobileNumber"
-              value={formData.mobileNumber}
-              onChange={handleInputChange}
-              maxLength="10"
-              required
-            />
+            <label>Mobile *</label>
+            <input type="tel" name="mobileNumber" value={formData.mobileNumber} onChange={handleInputChange} maxLength="10" required />
           </div>
 
           <div className="form-group">
             <label>College *</label>
-            <select
-              name="college"
-              value={formData.college}
-              onChange={handleInputChange}
-              required
-            >
+            <select name="college" value={formData.college} onChange={handleInputChange} required>
               <option value="">Select College</option>
               <option value="Ramco Institution of Technology">Ramco Institution of Technology</option>
               <option value="Other">Other</option>
@@ -352,9 +193,8 @@ if (formData.college === "Other") {
               <input
                 type="text"
                 name="collegeName"
-                value={formData.collegeName || ""}
+                value={formData.collegeName}
                 onChange={handleInputChange}
-                placeholder="Enter your college name"
                 required
               />
             </div>
@@ -362,132 +202,55 @@ if (formData.college === "Other") {
 
           <div className="form-group">
             <label>Department *</label>
-            <select
-              name="department"
-              value={formData.department}
-              onChange={handleInputChange}
-              required
-            >
+            <select name="department" value={formData.department} onChange={handleInputChange} required>
               <option value="">Select Department</option>
-              {departments.map((dept) => (
-                <option key={dept}>{dept}</option>
+              {departments.map((d) => (
+                <option key={d}>{d}</option>
               ))}
             </select>
           </div>
 
           <div className="form-group">
             <label>Year *</label>
-            <select
-              name="year"
-              value={formData.year}
-              onChange={handleInputChange}
-              required
-            >
+            <select name="year" value={formData.year} onChange={handleInputChange} required>
               <option value="">Select Year</option>
-              {years.map((yr) => (
-                <option key={yr}>{yr}</option>
+              {years.map((y) => (
+                <option key={y}>{y}</option>
               ))}
             </select>
           </div>
 
           <div className="form-group">
-            <label>Select Events (4 event max) *</label>
-            <div className="events-checkbox-container">
-              <div className="events-column">
-                <div className="events-column-title">Technical</div>
-                {eventsList
-                  .filter((ev) => technicalEvents.has(ev))
-                  .map((event) => (
-                    <label className="checkbox-label" key={event}>
-                      <input
-                        type="checkbox"
-                        checked={formData.selectedEvents.includes(event)}
-                        onChange={() => handleEventToggle(event)}
-                      />
-                      {event}
-                    </label>
-                  ))}
-              </div>
-
-              <div className="events-column">
-                <div className="events-column-title">Non-Technical</div>
-                {eventsList
-                  .filter((ev) => nonTechnicalEvents.has(ev))
-                  .map((event) => (
-                    <label className="checkbox-label" key={event}>
-                      <input
-                        type="checkbox"
-                        checked={formData.selectedEvents.includes(event)}
-                        onChange={() => handleEventToggle(event)}
-                      />
-                      {event}
-                    </label>
-                  ))}
-              </div>
-            </div>
+            <label>Select Events (Max 4)</label>
+            {eventsList.map((event) => (
+              <label key={event} style={{display:"block"}}>
+                <input
+                  type="checkbox"
+                  checked={formData.selectedEvents.includes(event)}
+                  onChange={() => handleEventToggle(event)}
+                />
+                {event}
+              </label>
+            ))}
           </div>
 
-          {/* Payment QR Code */}
           {formData.college === "Other" && (
-            <div className="form-group">
-              <label>Scan to Pay ( ₹200) *</label>
-              <div className="qr-container">
-                <img src={require("./assets/qr-code.png")} alt="Payment QR Code" className="qr-image" />
+            <>
+              <div className="form-group">
+                <label>Scan to Pay (₹200)</label>
+                <img src={require("./assets/qr-code.png")} alt="QR" className="qr-image"/>
               </div>
-            </div>
-          )}
 
-          {/* File Upload */}
-          {formData.college === "Other" && (
-            <div className="form-group">
-              <label>Payment Screenshot (₹200) *</label>
-              <div className="file-upload-container">
-                <input
-  type="file"
-  id="paymentScreenshot"
-  name="paymentScreenshot"
-  accept="image/png, image/jpeg, image/jpg"
-  onChange={handleFileChange}
-  style={{ display: "none" }}   // 👈 CRITICAL
-/>
-                <label htmlFor="paymentScreenshot" className="file-upload-label">
-                  <span className="upload-icon">📤</span>
-                  <span>
-                    {formData.paymentScreenshot
-                      ? formData.paymentScreenshot.name
-                      : "Click to upload payment screenshot"}
-                  </span>
-                </label>
+              <div className="form-group">
+                <label>Upload Payment Screenshot *</label>
+                <input type="file" accept="image/png,image/jpeg" onChange={handleFileChange}/>
               </div>
-              {formData.paymentScreenshot !== null && (
-                <>
-                  {screenshotVerified && (
-                    <div style={{ color: "#00d9ff", fontSize: "12px", marginTop: "8px", fontWeight: "bold" }}>
-                      ✓ Screenshot verified
-                    </div>
-                  )}
-                  {verificationError && (
-                    <div style={{ color: "#ff9900", fontSize: "12px", marginTop: "8px" }}>
-                      {verificationError}
-                    </div>
-                  )}
-                  {!screenshotVerified && !verificationError && (
-                    <div style={{ color: "#00d9ff", fontSize: "12px", marginTop: "8px" }}>
-                      ⏳ Verifying screenshot...
-                    </div>
-                  )}
-                </>
-              )}
-            </div>
+            </>
           )}
 
           <div className="form-actions">
-            <button type="submit" className="submit-btn"  disabled={formData.college === "Other" && !screenshotVerified}>
-              Complete Registration
-            </button>
-            <button type="button" onClick={onClose}>
-              Cancel
-            </button>
+            <button type="submit" className="submit-btn">Complete Registration</button>
+            <button type="button" onClick={onClose}>Cancel</button>
           </div>
 
         </form>
