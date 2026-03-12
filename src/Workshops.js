@@ -102,7 +102,7 @@ export default function Workshops() {
           </div>
           <motion.button
             className="register-btn"
-            onClick={handleRegister}
+           onClick={() => window.alert("Registration Closed")}
             whileHover={{ scale: 1.05, boxShadow: "0 0 20px #00f0ff" }}
             whileTap={{ scale: 0.95 }}
           >

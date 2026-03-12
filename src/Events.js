@@ -60,7 +60,9 @@ export default function Events() {
         <motion.h1 className="page-title" variants={fadeInUp} initial="initial" animate="animate" style={{ fontFamily: 'Orbitron', margin: 0 }}>
           TECHNICAL EVENTS
         </motion.h1>
-        <button className="register" onClick={() => setShowRegistrationForm(true)} style={{ fontFamily: 'Orbitron', width: 'auto', padding: '10px 30px', whiteSpace: 'nowrap' }}>Register Now</button>
+        <button className="register" onClick={() => window.alert("Registration Closed")} style={{ fontFamily: 'Orbitron', width: 'auto', padding: '10px 30px', whiteSpace: 'nowrap' }}>
+          Register Now
+        </button>
       </div>
 
       <motion.div className="card-container" variants={stagger} initial="initial" animate="animate">
