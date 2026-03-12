@@ -137,7 +137,7 @@ export default function RegistrationForm({ isOpen, onClose }) {
     const base64Image = await fileToBase64(formData.paymentScreenshot);
     formDataToSend.append("paymentScreenshot", base64Image);
 
-    fetch("https://script.google.com/macros/s/AKfycby4MBHoPwX4F4aNadzI4jGta-t2GH_HVBv8-S35yAsEvM4zxDbv-BH73TP9mTLVjYy8/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbxm_WluRSlc2EcBCZFYNautl7XNL1g9SDnkreGxNFS7kXGdLa1xIhorHtHzuKahcWYsdg/exec", {
       method: "POST",
       body: formDataToSend,
     })
