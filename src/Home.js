@@ -196,7 +196,7 @@ export default function Home() {
   className="register-btn"
   whileHover={{ scale: 1.08 }}
   whileTap={{ scale: 0.95 }}
-  onClick={() => setShowRegistrationForm(true)}
+  onClick={() => window.alert("Registration Closed")}
 >
   Register Now
 </motion.button>
